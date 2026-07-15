@@ -1,0 +1,26 @@
+location_name,zone,accident_count,severe_accident_count
+West End,Central,6,4
+Downtown,Central,5,3
+South Bridge,North,4,4
+Downtown,North,4,2
+Central Park,East,3,3
+East Junction,North,3,3
+East Junction,South,3,3
+East Junction,Central,3,2
+East Junction,West,3,2
+West End,South,3,2
+West End,North,3,1
+South Bridge,South,2,2
+South Bridge,West,2,2
+West End,West,2,2
+Downtown,East,2,1
+Central Park,North,1,1
+Central Park,South,1,1
+Central Park,West,1,1
+Downtown,South,1,1
+Downtown,West,1,1
+South Bridge,Central,1,1
+South Bridge,East,1,1
+West End,East,1,1
+Central Park,Central,1,0
+East Junction,East,1,0

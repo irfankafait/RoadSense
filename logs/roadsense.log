@@ -1,0 +1,10 @@
+2026-07-15 01:33:17,919 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-15 01:33:17,984 | INFO | Dataset loaded successfully.
+2026-07-15 01:33:18,008 | INFO | Removed 1 duplicate rows.
+2026-07-15 01:33:18,025 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\roadsense_cleaned_records_v1.csv
+2026-07-15 01:33:18,030 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-15 15:19:58,032 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-15 15:19:58,141 | INFO | Dataset loaded successfully.
+2026-07-15 15:19:58,165 | INFO | Removed 1 duplicate rows.
+2026-07-15 15:19:58,178 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\roadsense_cleaned_records_v1.csv
+2026-07-15 15:19:58,179 | INFO | RoadSense data cleaning pipeline completed successfully.
