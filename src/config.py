@@ -21,6 +21,7 @@ LOG_DIR = PROJECT_ROOT / 'logs'
 # ==========================================================
 
 DOCS_DIR = PROJECT_ROOT / 'docs'
+SQL_DIR = PROJECT_ROOT / 'sql'
 
 
 # Create folders if missing
@@ -31,7 +32,8 @@ for folder in [
     PROCESSED_DATA_DIR,
     EXTERNAL_DATA_DIR,
     DOCS_DIR,
-    LOG_DIR
+    LOG_DIR,
+    SQL_DIR
     
 ]:
     
