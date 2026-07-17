@@ -7,7 +7,15 @@ from logger import logger
 class DatabaseManager:
 
     """
-    Handles all database operations for the RoadSense project.
+    Handles all database operations 
+    for the RoadSense project.
     """
-    pass
+    def __init__(self):
+        self.connection = None
+        self.cursor = None
+        logger.info('DatabaseManager initialized.')
+
+if __name__ == '__main__':
+    db = DatabaseManager()
+            
 
