@@ -66,12 +66,46 @@ class DatabaseManager:
 
             return None
 
+    def create_tables(self):
+        """
+        Create all required tables for RoadSense.
+        """
+
+        try:
+
+            query = """
+            CREATE TABLE IF NOT EXISTS accidents (
+            
+            accident_id INT AUTO_INCREMENT PRIMARY KEY,
+
+            accident_data DATE,
+
+            location VARCHAR(100),
+
+            weather VARCHAR (100),
+
+            severity VARCHAR (100)
+
+            )                
+            """
+
+            self.cursor.execute(query)
+
+            self.connection.commit()
+
+            logger.info("Table 'accidents' created successfully.")
+
+        except Error as e:
+
+            logger.error(f'Failed to create table: {e}')
+
 
 if __name__ == '__main__':
     db = DatabaseManager()
 
     db.create_database()
 
-    db.connect()
+    if db.connect():
+        db.create_tables()
             
 
