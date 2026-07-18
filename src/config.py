@@ -74,3 +74,14 @@ files = [
 
 for file in files:
     file.touch(exist_ok=True)
+
+
+# ==========================================================
+# Database Configuration
+# ==========================================================
+
+DB_HOST = 'localhost'
+DB_PORT = 3306
+DB_NAME = 'roadsense'
+DB_USER = 'root'
+DB_PASSWORD = 'mysql123'

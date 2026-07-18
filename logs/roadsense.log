@@ -9,3 +9,13 @@
 2026-07-15 15:19:58,178 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\roadsense_cleaned_records_v1.csv
 2026-07-15 15:19:58,179 | INFO | RoadSense data cleaning pipeline completed successfully.
 2026-07-18 03:50:48,214 | INFO | DatabaseManager initialized.
+2026-07-18 17:39:10,436 | INFO | DatabaseManager initialized.
+2026-07-18 17:48:42,045 | INFO | DatabaseManager initialized.
+2026-07-18 17:48:42,526 | ERROR | MySQL connection failed: 1049 (42000): Unknown database 'roadsense'
+2026-07-18 18:20:54,255 | INFO | DatabaseManager initialized.
+2026-07-18 18:20:54,620 | INFO | Connected to MySQL successfully.
+2026-07-18 18:32:36,711 | INFO | DatabaseManager initialized.
+2026-07-18 18:32:36,954 | INFO | Connected to MySQL successfully.
+2026-07-18 18:37:11,949 | INFO | DatabaseManager initialized.
+2026-07-18 18:37:12,061 | INFO | Database roadsense is ready.
+2026-07-18 18:37:12,112 | INFO | Connected to MySQL successfully.

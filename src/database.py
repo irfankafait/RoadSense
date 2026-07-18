@@ -14,8 +14,64 @@ class DatabaseManager:
         self.connection = None
         self.cursor = None
         logger.info('DatabaseManager initialized.')
+    
+    def create_database(self):
+        """
+        Create the RoadSense database if it doesn't already exist.
+        """
+        try:
+            temp_connection = mysql.connector.connect(
+                host=DB_HOST,
+                port=DB_PORT,
+                user=DB_USER,
+                password=DB_PASSWORD
+            )
+
+            temp_cursor = temp_connection.cursor()
+
+            temp_cursor.execute(
+                f'CREATE DATABASE IF NOT EXISTS {DB_NAME}'
+            )
+
+            temp_connection.commit()
+
+            logger.info(f"Database '{DB_NAME}' is ready.")
+
+            temp_cursor.close()
+            temp_connection.close()
+
+        except Error as e:
+            logger.error(f'Failed to create database: {e}')
+
+
+    def connect(self):
+        """
+        Establish a connection to the MySQL database.
+        """
+        try:
+            self.connection = mysql.connector.connect(
+                host = DB_HOST,
+                port = DB_PORT,
+                database = DB_NAME,
+                user = DB_USER,
+                password = DB_PASSWORD
+            )
+
+            self.cursor = self.connection.cursor()
+
+            logger.info('Connected to MySQL successfully.')
+            return self.connection
+        except Error as e:
+            logger.error(f'MySQL connection failed: {e}')
+
+            return None
+
 
 if __name__ == '__main__':
     db = DatabaseManager()
+
+    db.create_database()
+
+    db.connect()
             
 
