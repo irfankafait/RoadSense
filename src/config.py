@@ -71,7 +71,7 @@ HOTSPOT_RANKING_FILE = (
 files = [
     PROJECT_ROOT / 'logs/logger.py',
     PROJECT_ROOT / 'sql/002_create_tables.sql',
-    PROJECT_ROOT / 'sql/003_insert_lookup_data.sql',
+    PROJECT_ROOT / 'sql/003_seed_lookup_tables.sql',
     PROJECT_ROOT / 'sql/004_create_indexes.sql',
     PROJECT_ROOT / 'sql/005_create_views.sql'
 ]

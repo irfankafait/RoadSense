@@ -70,13 +70,14 @@ class DatabaseManager:
         """
         Create all required tables for RoadSense.
         """
-        sql_file = PROJECT_ROOT / 'sql' / '002_create_tables.sql'
-
-        with open(sql_file, 'r', encoding='utf-8') as file:
-            query = file.read()
         
         
         try:
+
+            sql_file = PROJECT_ROOT / 'sql' / '002_create_tables.sql'
+
+            with open(sql_file, 'r', encoding='utf-8') as file:
+                query = file.read()
 
             statements = query.split(';')
 
@@ -94,13 +95,47 @@ class DatabaseManager:
 
             logger.error(f'Failed to create tables: {e}')
 
+    def seed_lookup_tables(self):
+
+        """
+        Insert default lookup data.
+        """        
+        try:
+
+            sql_file = PROJECT_ROOT / 'sql' / '003_seed_lookup_tables.sql'
+
+            with open(sql_file, 'r', encoding='utf-8') as file:
+                query = file.read()
+
+            for statement in query.split(';'):
+
+                statement = statement.strip()
+
+                if statement:
+
+                    self.cursor.execute(statement)
+
+            self.connection.commit()
+
+            logger.info('Lookup tables seeded successfully.')
+
+        except Error as e:
+
+            logger.error(f'Failed to seed lookup tables: {e}')            
+
+
 
 if __name__ == '__main__':
+
     db = DatabaseManager()
 
     db.create_database()
 
     if db.connect():
+
         db.create_tables()
+
+        db.seed_lookup_tables()
+
             
 

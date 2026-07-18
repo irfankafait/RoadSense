@@ -37,3 +37,17 @@
 2026-07-19 00:15:28,805 | INFO | Database 'roadsense' is ready.
 2026-07-19 00:15:28,836 | INFO | Connected to MySQL successfully.
 2026-07-19 00:15:28,876 | INFO | All tables created successfully.
+2026-07-19 00:41:43,951 | INFO | DatabaseManager initialized.
+2026-07-19 00:41:44,078 | INFO | Database 'roadsense' is ready.
+2026-07-19 00:41:44,122 | INFO | Connected to MySQL successfully.
+2026-07-19 00:41:44,152 | INFO | All tables created successfully.
+2026-07-19 00:42:36,299 | INFO | DatabaseManager initialized.
+2026-07-19 00:42:36,398 | INFO | Database 'roadsense' is ready.
+2026-07-19 00:42:36,441 | INFO | Connected to MySQL successfully.
+2026-07-19 00:42:36,475 | INFO | All tables created successfully.
+2026-07-19 00:42:36,502 | INFO | Lookup tables seeded successfully.
+2026-07-19 00:43:43,705 | INFO | DatabaseManager initialized.
+2026-07-19 00:43:43,800 | INFO | Database 'roadsense' is ready.
+2026-07-19 00:43:43,840 | INFO | Connected to MySQL successfully.
+2026-07-19 00:43:43,868 | INFO | All tables created successfully.
+2026-07-19 00:43:43,882 | INFO | Lookup tables seeded successfully.
