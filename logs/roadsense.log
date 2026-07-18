@@ -23,3 +23,7 @@
 2026-07-18 22:21:47,148 | INFO | Database 'roadsense' is ready.
 2026-07-18 22:21:47,194 | INFO | Connected to MySQL successfully.
 2026-07-18 22:21:47,728 | INFO | Table 'accidents' created successfully.
+2026-07-18 23:15:26,170 | INFO | DatabaseManager initialized.
+2026-07-18 23:15:26,282 | INFO | Database 'roadsense' is ready.
+2026-07-18 23:15:26,317 | INFO | Connected to MySQL successfully.
+2026-07-18 23:15:26,329 | INFO | Table 'accidents' created successfully.

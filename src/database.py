@@ -70,24 +70,13 @@ class DatabaseManager:
         """
         Create all required tables for RoadSense.
         """
-
+        sql_file = PROJECT_ROOT / 'sql' / '002_create_tables.sql'
+        
+        with open(sql_file, 'r', encoding='utf-8') as file:
+            query = file.read()
+        
+        
         try:
-
-            query = """
-            CREATE TABLE IF NOT EXISTS accidents (
-            
-            accident_id INT AUTO_INCREMENT PRIMARY KEY,
-
-            accident_data DATE,
-
-            location VARCHAR(100),
-
-            weather VARCHAR (100),
-
-            severity VARCHAR (100)
-
-            )                
-            """
 
             self.cursor.execute(query)
 
