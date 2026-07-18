@@ -71,22 +71,28 @@ class DatabaseManager:
         Create all required tables for RoadSense.
         """
         sql_file = PROJECT_ROOT / 'sql' / '002_create_tables.sql'
-        
+
         with open(sql_file, 'r', encoding='utf-8') as file:
             query = file.read()
         
         
         try:
 
-            self.cursor.execute(query)
+            statements = query.split(';')
 
-            self.connection.commit()
+            for statement in statements:
+                statement = statement.strip()
 
-            logger.info("Table 'accidents' created successfully.")
+                if statement:
+                    self.cursor.execute(statement)
+
+            self.connection.commit()        
+
+            logger.info("All tables created successfully.")
 
         except Error as e:
 
-            logger.error(f'Failed to create table: {e}')
+            logger.error(f'Failed to create tables: {e}')
 
 
 if __name__ == '__main__':
