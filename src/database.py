@@ -121,7 +121,24 @@ class DatabaseManager:
 
         except Error as e:
 
-            logger.error(f'Failed to seed lookup tables: {e}')            
+            logger.error(f'Failed to seed lookup tables: {e}')   
+
+    def fetch_all(self, query):
+
+        """
+        Execute a SELECT query and return all rows.
+        """
+
+        try:
+            self.cursor.execute(query)
+
+            return self.cursor.fetchall()
+        
+        except Error as e:
+
+            logger.error(f'Query failed: {e}')
+
+            return []
 
 
 

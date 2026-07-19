@@ -51,3 +51,12 @@
 2026-07-19 00:43:43,840 | INFO | Connected to MySQL successfully.
 2026-07-19 00:43:43,868 | INFO | All tables created successfully.
 2026-07-19 00:43:43,882 | INFO | Lookup tables seeded successfully.
+2026-07-19 15:29:47,665 | INFO | DatabaseManager initialized.
+2026-07-19 15:29:47,666 | INFO | ETL Loader initialized.
+2026-07-19 15:42:50,463 | INFO | DatabaseManager initialized.
+2026-07-19 15:42:50,703 | INFO | Connected to MySQL successfully.
+2026-07-19 15:42:50,704 | INFO | ETL Loader initialized.
+2026-07-19 17:04:44,969 | INFO | DatabaseManager initialized.
+2026-07-19 17:04:45,242 | INFO | Connected to MySQL successfully.
+2026-07-19 17:04:45,243 | INFO | ETL Loader initialized.
+2026-07-19 17:04:45,277 | INFO | Lookup dictionaries loaded successfully.
