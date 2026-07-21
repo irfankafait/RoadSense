@@ -48,14 +48,14 @@ for folder in [
 
 RAW_DATA_FILE = (
     RAW_DATA_DIR /
-    'roadsense_accident_records_raw_v1.csv'
+    'raw_accidents.csv'
 )
 
 
 
 CLEANED_DATA_FILE = (
     PROCESSED_DATA_DIR /
-    'roadsense_cleaned_records_v1.csv'
+    'cleaned_accidents.csv'
 )
 
 SUMMARY_METRICS_FILE = (

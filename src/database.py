@@ -140,6 +140,73 @@ class DatabaseManager:
 
             return []
 
+    def insert_accidents(self, records):
+
+        """
+        Insert multiple accident records.
+        """
+
+        query = """
+
+        INSERT INTO accidents (
+        
+        accident_date,
+
+        location_id,
+
+        weather_id,
+
+        severity_id,
+
+        road_type_id
+
+        )
+
+        VALUES (
+        
+        %s,
+
+        %s,
+
+        %s,
+
+        %s,
+
+        %s
+
+        )
+
+        """
+
+        try:
+            self.cursor.executemany(
+
+            query,
+
+            records
+
+            )
+
+            self.connection.commit()
+
+            logger.info(f'{len(records)} accidents inserted.')
+
+        except Error as e:
+
+            self.connection.rollback()
+
+            logger.error(f'Insertion failed: {e}')
+
+            raise
+
+    def disconnect(self):
+
+        if self.cursor:
+            self.cursor.close()
+
+        if self.connection:
+            self.connection.close()
+        logger.info('Database connection closed.') 
 
 
 if __name__ == '__main__':

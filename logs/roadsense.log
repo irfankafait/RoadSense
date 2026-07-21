@@ -60,3 +60,133 @@
 2026-07-19 17:04:45,242 | INFO | Connected to MySQL successfully.
 2026-07-19 17:04:45,243 | INFO | ETL Loader initialized.
 2026-07-19 17:04:45,277 | INFO | Lookup dictionaries loaded successfully.
+2026-07-19 17:55:01,798 | INFO | DatabaseManager initialized.
+2026-07-19 17:55:01,902 | INFO | Connected to MySQL successfully.
+2026-07-19 17:55:01,903 | INFO | ETL Loader initialized.
+2026-07-19 17:55:01,906 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 01:04:42,469 | INFO | DatabaseManager initialized.
+2026-07-21 01:04:42,729 | INFO | Connected to MySQL successfully.
+2026-07-21 01:04:42,730 | INFO | ETL Loader initialized.
+2026-07-21 01:04:42,843 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 01:04:42,855 | ERROR | Insertion failed: 1054 (42S22): Unknown column 'accident_date' in 'field list'
+2026-07-21 01:15:40,478 | INFO | DatabaseManager initialized.
+2026-07-21 01:15:40,609 | INFO | Database 'roadsense' is ready.
+2026-07-21 01:15:40,644 | INFO | Connected to MySQL successfully.
+2026-07-21 01:15:40,883 | INFO | All tables created successfully.
+2026-07-21 01:15:40,913 | INFO | Lookup tables seeded successfully.
+2026-07-21 01:16:34,811 | INFO | DatabaseManager initialized.
+2026-07-21 01:16:34,897 | INFO | Connected to MySQL successfully.
+2026-07-21 01:16:34,897 | INFO | ETL Loader initialized.
+2026-07-21 01:16:34,905 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 01:16:34,928 | INFO | 2 accidents inserted.
+2026-07-21 01:58:41,574 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 01:58:41,575 | INFO | DatabaseManager initialized.
+2026-07-21 01:58:41,657 | INFO | Connected to MySQL successfully.
+2026-07-21 01:58:41,658 | INFO | ETL Loader initialized.
+2026-07-21 01:58:41,696 | INFO | Connected to MySQL successfully.
+2026-07-21 01:58:41,701 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 01:58:41,708 | INFO | Database connection closed.
+2026-07-21 02:07:05,602 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:07:05,669 | INFO | Dataset loaded successfully.
+2026-07-21 02:07:05,701 | INFO | Removed 1 duplicate rows.
+2026-07-21 02:07:05,716 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 02:07:05,716 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 02:07:13,706 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 02:07:13,707 | INFO | DatabaseManager initialized.
+2026-07-21 02:07:13,788 | INFO | Connected to MySQL successfully.
+2026-07-21 02:07:13,788 | INFO | ETL Loader initialized.
+2026-07-21 02:07:13,830 | INFO | Connected to MySQL successfully.
+2026-07-21 02:07:13,833 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 02:07:13,858 | INFO | Database connection closed.
+2026-07-21 02:19:12,198 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:19:12,205 | INFO | Dataset loaded successfully.
+2026-07-21 02:20:31,040 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:20:31,048 | INFO | Dataset loaded successfully.
+2026-07-21 02:20:31,064 | INFO | Removed 1 duplicate rows.
+2026-07-21 02:21:10,822 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:21:10,833 | INFO | Dataset loaded successfully.
+2026-07-21 02:21:10,843 | INFO | Removed 1 duplicate rows.
+2026-07-21 02:21:37,627 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:21:37,633 | INFO | Dataset loaded successfully.
+2026-07-21 02:26:04,574 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:26:04,581 | INFO | Dataset loaded successfully.
+2026-07-21 02:26:04,594 | INFO | Removed 1 duplicate rows.
+2026-07-21 02:26:04,604 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 02:26:04,605 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 02:26:14,180 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 02:26:14,181 | INFO | DatabaseManager initialized.
+2026-07-21 02:26:14,272 | INFO | Connected to MySQL successfully.
+2026-07-21 02:26:14,272 | INFO | ETL Loader initialized.
+2026-07-21 02:26:14,308 | INFO | Connected to MySQL successfully.
+2026-07-21 02:26:14,311 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 02:26:14,337 | INFO | Database connection closed.
+2026-07-21 02:57:07,609 | INFO | DatabaseManager initialized.
+2026-07-21 02:57:07,699 | INFO | Database 'roadsense' is ready.
+2026-07-21 02:57:07,731 | INFO | Connected to MySQL successfully.
+2026-07-21 02:57:08,297 | INFO | All tables created successfully.
+2026-07-21 02:57:08,322 | INFO | Lookup tables seeded successfully.
+2026-07-21 02:57:43,336 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 02:57:43,343 | INFO | Dataset loaded successfully.
+2026-07-21 02:57:43,354 | INFO | Removed 1 duplicate rows.
+2026-07-21 02:57:43,362 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 02:57:43,363 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 02:57:51,913 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 02:57:51,915 | INFO | DatabaseManager initialized.
+2026-07-21 02:57:51,984 | INFO | Connected to MySQL successfully.
+2026-07-21 02:57:51,985 | INFO | ETL Loader initialized.
+2026-07-21 02:57:52,025 | INFO | Connected to MySQL successfully.
+2026-07-21 02:57:52,029 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 02:57:52,053 | ERROR | Insertion failed: 1054 (42S22): Unknown column 'nan' in 'field list'
+2026-07-21 02:57:52,056 | INFO | Database connection closed.
+2026-07-21 03:04:54,257 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 03:04:54,258 | INFO | DatabaseManager initialized.
+2026-07-21 03:04:54,354 | INFO | Connected to MySQL successfully.
+2026-07-21 03:04:54,354 | INFO | ETL Loader initialized.
+2026-07-21 03:04:54,388 | INFO | Connected to MySQL successfully.
+2026-07-21 03:04:54,392 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 03:04:54,413 | ERROR | Insertion failed: 1054 (42S22): Unknown column 'nan' in 'field list'
+2026-07-21 03:04:54,415 | INFO | Database connection closed.
+2026-07-21 03:05:06,560 | INFO | Pipeline completed in 0.00 seconds.
+2026-07-21 03:05:06,560 | INFO | DatabaseManager initialized.
+2026-07-21 03:05:06,642 | INFO | Connected to MySQL successfully.
+2026-07-21 03:05:06,642 | INFO | ETL Loader initialized.
+2026-07-21 03:05:06,689 | INFO | Connected to MySQL successfully.
+2026-07-21 03:05:06,693 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 03:05:06,720 | ERROR | Insertion failed: 1054 (42S22): Unknown column 'nan' in 'field list'
+2026-07-21 03:05:06,723 | INFO | Database connection closed.
+2026-07-21 03:12:13,710 | INFO | DatabaseManager initialized.
+2026-07-21 03:12:13,786 | INFO | Connected to MySQL successfully.
+2026-07-21 03:12:13,786 | INFO | ETL Loader initialized.
+2026-07-21 03:12:13,836 | INFO | Connected to MySQL successfully.
+2026-07-21 03:12:13,839 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 03:12:13,865 | ERROR | Insertion failed: 1054 (42S22): Unknown column 'nan' in 'field list'
+2026-07-21 03:12:13,870 | INFO | Database connection closed.
+2026-07-21 03:12:13,870 | INFO | Pipeline completed in 0.03 seconds.
+2026-07-21 04:03:06,214 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 04:03:06,221 | INFO | Dataset loaded successfully.
+2026-07-21 04:03:06,237 | INFO | Removed 1 duplicate rows.
+2026-07-21 04:03:06,255 | INFO | Filled 2 missing values in required columns.
+2026-07-21 04:03:23,197 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 04:03:23,210 | INFO | Dataset loaded successfully.
+2026-07-21 04:03:23,233 | INFO | Removed 1 duplicate rows.
+2026-07-21 04:03:23,250 | INFO | Filled 2 missing values in required columns.
+2026-07-21 04:04:34,579 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 04:04:34,586 | INFO | Dataset loaded successfully.
+2026-07-21 04:04:34,603 | INFO | Removed 1 duplicate rows.
+2026-07-21 04:04:34,614 | INFO | Filled 2 missing values in required columns.
+2026-07-21 04:04:34,619 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 04:04:34,620 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 20:40:08,350 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 20:40:08,399 | INFO | Dataset loaded successfully.
+2026-07-21 20:40:08,422 | INFO | Removed 1 duplicate rows.
+2026-07-21 20:40:08,449 | INFO | Filled 2 missing values in required columns.
+2026-07-21 20:40:08,464 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 20:40:08,464 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 20:40:17,705 | INFO | DatabaseManager initialized.
+2026-07-21 20:40:18,008 | INFO | Connected to MySQL successfully.
+2026-07-21 20:40:18,008 | INFO | ETL Loader initialized.
+2026-07-21 20:40:18,043 | INFO | Connected to MySQL successfully.
+2026-07-21 20:40:18,109 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 20:40:18,183 | INFO | 59 accidents inserted.
+2026-07-21 20:40:18,186 | INFO | Database connection closed.
+2026-07-21 20:40:18,186 | INFO | Pipeline completed in 0.14 seconds.

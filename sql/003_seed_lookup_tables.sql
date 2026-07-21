@@ -2,21 +2,21 @@ INSERT IGNORE INTO weather (weather_name)
 
 VALUES
 
-('Sunny'),
-('Rainy'),
-('Foggy'),
+('Clear'),
+('Rain'),
+('Fog'),
 ('Cloudy'),
-('Snowy');
+('Unknown');
 
 
 INSERT IGNORE INTO severity (severity_name)
 
 VALUES
 
-('Low'),
-('Medium'),
-('High'),
-('Critical');
+('Minor'),
+('Major'),
+('Critical'),
+('Unknown');
 
 
 INSERT IGNORE INTO road_types (road_type_name)
@@ -25,7 +25,6 @@ VALUES
 
 ('Highway'),
 ('Urban'),
-('Residential'),
 ('Rural');
 
 
@@ -33,8 +32,10 @@ INSERT IGNORE INTO locations (location_name)
 
 VALUES
 
-('Lahore'),
-('Karachi'),
-('Islamabad'),
-('Rawalpindi');
+('Central Park'),
+('Downtown'),
+('East Junction'),
+('South Bridge'),
+('West End'),
+('Unknown');
 

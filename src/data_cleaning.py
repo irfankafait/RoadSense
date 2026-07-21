@@ -7,11 +7,11 @@ REQUIRED_COLUMNS = [
     'accident_id',
     'accident_date',
     'hour_of_day',
-    'location_name',
+    'location',
     'zone',
     'road_type',
     'severity',
-    'weather_condition'
+    'weather'
 ]
 
 
@@ -65,16 +65,6 @@ def parse_dates(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-def create_month_column(df):
-    """
-    Create month coumn.
-    """
-
-    df['month'] = (
-        df['accident_date'].dt.strftime('%Y-%m')
-    )
-
-    return df
 
 def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -97,7 +87,7 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+def impute_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """
     Handle missing values.
     """
@@ -109,6 +99,23 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     df[object_cols] = (
         df[object_cols].fillna('Unknown')
     )
+
+    required_columns = [
+
+        'accident_date',
+        'hour_of_day'
+    ]
+
+    before = df[required_columns].isna().sum().sum()
+
+    df[required_columns] = (
+
+        df[required_columns].ffill().bfill()
+    )
+
+    after = df[required_columns].isna().sum().sum()
+
+    logger.info(f'Filled {before - after} missing values in required columns.')
 
     return df
 
@@ -122,11 +129,9 @@ def clean_data(file_path: Path) -> pd.DataFrame:
 
     df = parse_dates(df)
 
-    df = create_month_column(df)
-
     df = remove_duplicates(df)
 
-    df = handle_missing_values(df)
+    df = impute_missing_values(df)
 
     return df
 

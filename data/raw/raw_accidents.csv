@@ -1,0 +1,61 @@
+accident_id,accident_date,hour_of_day,location,zone,road_type,severity,weather,latitude,longitude
+ACC001,1/1/2025,23,East Junction,Central,Highway,Minor,Clear,40.803,-73.9216
+ACC002,1/19/2025,13,Downtown,North,Highway,Minor,Rain,40.7516,-74.0947
+ACC003,2/23/2025,20,South Bridge,West,Highway,Major,Fog,40.8428,-74.0987
+ACC004,2/23/2025,13,East Junction,East,Highway,Minor,Fog,40.6307,-74.024
+ACC005,3/28/2025,11,South Bridge,East,Highway,Critical,Cloudy,40.7609,-73.9054
+ACC006,4/3/2025,17,East Junction,South,Urban,Critical,,40.8114,-74.0908
+ACC007,2/25/2025,9,Downtown,Central,Highway,Major,Fog,40.736,-73.9332
+ACC008,2/12/2025,11,Central Park,East,Rural,Critical,Clear,40.7827,-74.0658
+ACC009,2/6/2025,14,West End,East,Rural,Critical,Rain,40.8054,-73.9314
+ACC010,1/8/2025,1,East Junction,West,Urban,Minor,Rain,40.8739,-73.9866
+ACC011,3/7/2025,20,West End,West,Rural,Major,Rain,40.6795,-74.0507
+ACC012,3/24/2025,18,West End,South,Urban,Major,Rain,40.8992,-74.0723
+ACC013,4/3/2025,1,Downtown,Central,Rural,,Cloudy,40.7789,-74.023
+ACC014,4/17/2025,8,South Bridge,North,Rural,Critical,Clear,40.8045,-73.9926
+ACC015,3/25/2025,20,East Junction,North,Urban,Major,Rain,40.7361,-73.9092
+ACC016,3/17/2025,5,South Bridge,North,Rural,Major,Rain,40.6459,-73.9475
+ACC017,1/20/2025,10,West End,North,Highway,Major,Fog,40.6718,-74.0518
+ACC018,1/3/2025,23,West End,North,Rural,Minor,Rain,40.7979,-73.9106
+ACC019,2025-13-45,16,South Bridge,West,Highway,Critical,Rain,40.8139,-74.0202
+ACC020,3/15/2025,16,West End,North,Highway,Minor,Clear,40.7014,-73.9823
+ACC021,2/19/2025,7,Downtown,North,Rural,Critical,Clear,40.6687,-73.9189
+ACC022,3/3/2025,16,Central Park,East,Rural,Major,Rain,40.7618,-73.9553
+ACC023,4/8/2025,15,West End,Central,Highway,Minor,Cloudy,40.7063,-74.0178
+ACC024,1/22/2025,20,Downtown,North,Urban,Critical,Fog,40.8402,-74.0781
+ACC025,2/7/2025,17,West End,Central,Urban,Minor,Fog,40.7388,-73.9251
+ACC025,1/15/2025,17,Downtown,North,Rural,Critical,Clear,40.8907,-73.9147
+ACC027,2/6/2025,13,West End,West,Highway,Major,Clear,40.6494,-74.0996
+ACC028,4/9/2025,14,East Junction,West,Rural,Critical,Cloudy,40.6464,-74.0407
+ACC029,1/19/2025,23,South Bridge,North,Rural,Major,Clear,40.615,-74.0046
+ACC030,2/2/2025,16,Downtown,Central,Highway,Critical,Clear,40.8026,-74.053
+ACC031,1/19/2025,7,South Bridge,South,Highway,Critical,Clear,40.7258,-73.9833
+ACC032,3/9/2025,6,East Junction,Central,Urban,Major,Rain,40.8015,-74.04
+ACC033,3/25/2025,2,Downtown,West,Rural,Critical,Clear,40.622,-74.0574
+ACC034,3/5/2025,11,Downtown,Central,Urban,Major,Rain,40.7315,-73.9914
+ACC035,3/20/2025,20,South Bridge,North,Rural,Critical,Fog,40.8795,-74.0793
+ACC036,2/9/2025,3,Downtown,South,Highway,Major,,40.7814,-73.9565
+ACC037,2/22/2025,20,East Junction,South,Urban,Major,Clear,40.6277,-74.0153
+ACC038,3/2/2025,0,East Junction,Central,Rural,Major,Rain,40.8224,-73.9897
+ACC039,4/18/2025,0,Downtown,North,Rural,Minor,Clear,40.8504,-73.9835
+ACC040,2/14/2025,4,Downtown,East,Urban,Minor,Fog,40.663,-74.0501
+ACC041,1/12/2025,17,West End,South,Rural,Minor,Rain,40.8594,-73.9048
+ACC042,2/14/2025,0,Central Park,East,Urban,Critical,Rain,40.68,-73.9425
+ACC043,1/13/2025,1,West End,Central,Highway,Major,Fog,40.6916,-73.9409
+ACC044,2/8/2025,0,Central Park,West,Urban,Major,Clear,40.8901,-74.0442
+ACC045,4/22/2025,17,East Junction,North,Highway,Major,Rain,40.7742,-73.9033
+ACC046,1/4/2025,19,,East,Rural,Major,Cloudy,40.7819,-73.9977
+ACC047,4/19/2025,6,East Junction,North,Rural,Major,Clear,40.756,-73.9387
+ACC048,2/12/2025,13,Downtown,East,Rural,Major,Clear,40.8159,-74.0399
+ACC049,3/22/2025,13,East Junction,West,Rural,Major,Rain,40.6576,-73.967
+ACC050,4/22/2025,23,Central Park,South,Rural,Major,Cloudy,40.7644,-74.0999
+ACC051,3/7/2025,,South Bridge,South,Rural,Major,Cloudy,40.7325,-73.9649
+ACC052,4/26/2025,23,Central Park,North,Urban,Critical,Fog,40.628,-73.9096
+ACC053,2/22/2025,9,Central Park,Central,Highway,Minor,Clear,40.6735,-74.005
+ACC054,1/15/2025,13,South Bridge,Central,Rural,Critical,Cloudy,40.7483,-74.0512
+ACC055,1/25/2025,3,West End,Central,Highway,Critical,Cloudy,40.6151,-74.0502
+ACC056,1/15/2025,4,West End,South,Rural,Critical,Fog,40.885,-73.9217
+ACC057,4/27/2025,17,West End,Central,Rural,Major,Cloudy,40.6778,-74.0506
+ACC058,3/25/2025,16,West End,Central,Urban,Major,Clear,40.8141,-74.0531
+ACC059,3/11/2025,17,Downtown,Central,Highway,Minor,Cloudy,40.8082,-73.9587
+ACC060,1/14/2025,13,East Junction,South,Urban,Major,Clear,40.6621,-74.016
