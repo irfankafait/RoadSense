@@ -144,32 +144,32 @@ class ETLoader:
         Validate one CSV row.
         """
 
-        if row['location'] not in self.locations:
-            logger.warning(f"Location '{row['location']}' does not exist in the lookup table.")
+        if row.location not in self.locations:
+            logger.warning(f"Location '{row.location}' does not exist in the lookup table.")
             return False
 
 
-        if row['zone'] not in self.zones:
-            logger.warning(f"Zone '{row['zone']}' does not exist in the lookup table.")
-            return False
-        
-
-        if row['weather'] not in self.weather:
-            logger.warning(f"Weather '{row['weather']}' does not exist in the lookup table.")
+        if row.zone not in self.zones:
+            logger.warning(f"Zone '{row.zone}' does not exist in the lookup table.")
             return False
         
 
-        if row['severity'] not in self.severity:
-            logger.warning(f"Severity '{row['severity']}' does not exist in the lookup table.")
+        if row.weather not in self.weather:
+            logger.warning(f"Weather '{row.weather}' does not exist in the lookup table.")
             return False
         
 
-        if row['road_type'] not in self.road_types:
-            logger.warning(f"Road type '{row['road_type']}' does not exist in the lookup table.")
+        if row.severity not in self.severity:
+            logger.warning(f"Severity '{row.severity}' does not exist in the lookup table.")
             return False
         
-        if not (0<= row['hour_of_day'] <= 23):
-            logger.warning(f"Invalid hour_of_day: {row['hour_of_day']}")
+
+        if row.road_type not in self.road_types:
+            logger.warning(f"Road type '{row.road_type}' does not exist in the lookup table.")
+            return False
+        
+        if not (0<= row.hour_of_day <= 23):
+            logger.warning(f"Invalid hour_of_day: {row.hour_of_day}")
             return False
         
         return True
@@ -180,20 +180,20 @@ class ETLoader:
         Transform one CSV row into a database-ready tuple.
         """
 
-        location_id = self.locations[row['location']]
+        location_id = self.locations[row.location]
 
-        weather_id = self.weather[row['weather']]
+        weather_id = self.weather[row.weather]
 
-        severity_id = self.severity[row['severity']]
+        severity_id = self.severity[row.severity]
 
-        road_type_id = self.road_types[row['road_type']]
+        road_type_id = self.road_types[row.road_type]
 
-        zone_id  = self.zones[row['zone']]
+        zone_id  = self.zones[row.zone]
 
         return (
-            row['accident_date'],
+            row.accident_date,
 
-            row['hour_of_day'],
+            row.hour_of_day,
 
             location_id,
 
@@ -205,9 +205,9 @@ class ETLoader:
 
             road_type_id,
 
-            row['latitude'],
+            row.latitude,
 
-            row['longitude']
+            row.longitude
 
         )
     
@@ -246,7 +246,7 @@ class ETLoader:
 
             skipped_rows = 0
 
-            for index, row in df.iterrows():
+            for index, row in enumerate(df.itertuples(index=False), start=1):
 
                 if not self.validate_row(row):
                     logger.warning(f'Skipping row {index + 1}')

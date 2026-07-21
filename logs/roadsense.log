@@ -516,3 +516,14 @@
 2026-07-22 00:40:15,063 | INFO | Skipped rows: 0
 2026-07-22 00:40:15,065 | INFO | Database connection closed.
 2026-07-22 00:40:15,065 | INFO | Pipeline completed in 0.06 seconds.
+2026-07-22 01:01:40,621 | INFO | DatabaseManager initialized.
+2026-07-22 01:01:40,728 | INFO | Connected to MySQL successfully.
+2026-07-22 01:01:40,729 | INFO | ETL Loader initialized.
+2026-07-22 01:01:40,767 | INFO | Connected to MySQL successfully.
+2026-07-22 01:01:40,770 | INFO | Lookup dictionaries loaded successfully.
+2026-07-22 01:01:40,783 | INFO | CSV validation completed successfully.
+2026-07-22 01:01:40,827 | INFO | 59 accidents inserted.
+2026-07-22 01:01:40,827 | INFO | successfully processed: 59
+2026-07-22 01:01:40,828 | INFO | Skipped rows: 0
+2026-07-22 01:01:40,830 | INFO | Database connection closed.
+2026-07-22 01:01:40,830 | INFO | Pipeline completed in 0.06 seconds.
