@@ -1,60 +1,60 @@
-accident_id,accident_date,hour_of_day,location,zone,road_type,severity,weather,latitude,longitude,month
-ACC001,2025-01-01,23.0,East Junction,Central,Highway,Minor,Clear,40.803,-73.9216,2025-01
-ACC002,2025-01-19,13.0,Downtown,North,Highway,Minor,Rain,40.7516,-74.0947,2025-01
-ACC003,2025-02-23,20.0,South Bridge,West,Highway,Major,Fog,40.8428,-74.0987,2025-02
-ACC004,2025-02-23,13.0,East Junction,East,Highway,Minor,Fog,40.6307,-74.024,2025-02
-ACC005,2025-03-28,11.0,South Bridge,East,Highway,Critical,Cloudy,40.7609,-73.9054,2025-03
-ACC006,2025-04-03,17.0,East Junction,South,Urban,Critical,Unknown,40.8114,-74.0908,2025-04
-ACC007,2025-02-25,9.0,Downtown,Central,Highway,Major,Fog,40.736,-73.9332,2025-02
-ACC008,2025-02-12,11.0,Central Park,East,Rural,Critical,Clear,40.7827,-74.0658,2025-02
-ACC009,2025-02-06,14.0,West End,East,Rural,Critical,Rain,40.8054,-73.9314,2025-02
-ACC010,2025-01-08,1.0,East Junction,West,Urban,Minor,Rain,40.8739,-73.9866,2025-01
-ACC011,2025-03-07,20.0,West End,West,Rural,Major,Rain,40.6795,-74.0507,2025-03
-ACC012,2025-03-24,18.0,West End,South,Urban,Major,Rain,40.8992,-74.0723,2025-03
-ACC013,2025-04-03,1.0,Downtown,Central,Rural,Unknown,Cloudy,40.7789,-74.023,2025-04
-ACC014,2025-04-17,8.0,South Bridge,North,Rural,Critical,Clear,40.8045,-73.9926,2025-04
-ACC015,2025-03-25,20.0,East Junction,North,Urban,Major,Rain,40.7361,-73.9092,2025-03
-ACC016,2025-03-17,5.0,South Bridge,North,Rural,Major,Rain,40.6459,-73.9475,2025-03
-ACC017,2025-01-20,10.0,West End,North,Highway,Major,Fog,40.6718,-74.0518,2025-01
-ACC018,2025-01-03,23.0,West End,North,Rural,Minor,Rain,40.7979,-73.9106,2025-01
-ACC019,2025-01-03,16.0,South Bridge,West,Highway,Critical,Rain,40.8139,-74.0202,Unknown
-ACC020,2025-03-15,16.0,West End,North,Highway,Minor,Clear,40.7014,-73.9823,2025-03
-ACC021,2025-02-19,7.0,Downtown,North,Rural,Critical,Clear,40.6687,-73.9189,2025-02
-ACC022,2025-03-03,16.0,Central Park,East,Rural,Major,Rain,40.7618,-73.9553,2025-03
-ACC023,2025-04-08,15.0,West End,Central,Highway,Minor,Cloudy,40.7063,-74.0178,2025-04
-ACC024,2025-01-22,20.0,Downtown,North,Urban,Critical,Fog,40.8402,-74.0781,2025-01
-ACC025,2025-02-07,17.0,West End,Central,Urban,Minor,Fog,40.7388,-73.9251,2025-02
-ACC027,2025-02-06,13.0,West End,West,Highway,Major,Clear,40.6494,-74.0996,2025-02
-ACC028,2025-04-09,14.0,East Junction,West,Rural,Critical,Cloudy,40.6464,-74.0407,2025-04
-ACC029,2025-01-19,23.0,South Bridge,North,Rural,Major,Clear,40.615,-74.0046,2025-01
-ACC030,2025-02-02,16.0,Downtown,Central,Highway,Critical,Clear,40.8026,-74.053,2025-02
-ACC031,2025-01-19,7.0,South Bridge,South,Highway,Critical,Clear,40.7258,-73.9833,2025-01
-ACC032,2025-03-09,6.0,East Junction,Central,Urban,Major,Rain,40.8015,-74.04,2025-03
-ACC033,2025-03-25,2.0,Downtown,West,Rural,Critical,Clear,40.622,-74.0574,2025-03
-ACC034,2025-03-05,11.0,Downtown,Central,Urban,Major,Rain,40.7315,-73.9914,2025-03
-ACC035,2025-03-20,20.0,South Bridge,North,Rural,Critical,Fog,40.8795,-74.0793,2025-03
-ACC036,2025-02-09,3.0,Downtown,South,Highway,Major,Unknown,40.7814,-73.9565,2025-02
-ACC037,2025-02-22,20.0,East Junction,South,Urban,Major,Clear,40.6277,-74.0153,2025-02
-ACC038,2025-03-02,0.0,East Junction,Central,Rural,Major,Rain,40.8224,-73.9897,2025-03
-ACC039,2025-04-18,0.0,Downtown,North,Rural,Minor,Clear,40.8504,-73.9835,2025-04
-ACC040,2025-02-14,4.0,Downtown,East,Urban,Minor,Fog,40.663,-74.0501,2025-02
-ACC041,2025-01-12,17.0,West End,South,Rural,Minor,Rain,40.8594,-73.9048,2025-01
-ACC042,2025-02-14,0.0,Central Park,East,Urban,Critical,Rain,40.68,-73.9425,2025-02
-ACC043,2025-01-13,1.0,West End,Central,Highway,Major,Fog,40.6916,-73.9409,2025-01
-ACC044,2025-02-08,0.0,Central Park,West,Urban,Major,Clear,40.8901,-74.0442,2025-02
-ACC045,2025-04-22,17.0,East Junction,North,Highway,Major,Rain,40.7742,-73.9033,2025-04
-ACC046,2025-01-04,19.0,Unknown,East,Rural,Major,Cloudy,40.7819,-73.9977,2025-01
-ACC047,2025-04-19,6.0,East Junction,North,Rural,Major,Clear,40.756,-73.9387,2025-04
-ACC048,2025-02-12,13.0,Downtown,East,Rural,Major,Clear,40.8159,-74.0399,2025-02
-ACC049,2025-03-22,13.0,East Junction,West,Rural,Major,Rain,40.6576,-73.967,2025-03
-ACC050,2025-04-22,23.0,Central Park,South,Rural,Major,Cloudy,40.7644,-74.0999,2025-04
-ACC051,2025-03-07,23.0,South Bridge,South,Rural,Major,Cloudy,40.7325,-73.9649,2025-03
-ACC052,2025-04-26,23.0,Central Park,North,Urban,Critical,Fog,40.628,-73.9096,2025-04
-ACC053,2025-02-22,9.0,Central Park,Central,Highway,Minor,Clear,40.6735,-74.005,2025-02
-ACC054,2025-01-15,13.0,South Bridge,Central,Rural,Critical,Cloudy,40.7483,-74.0512,2025-01
-ACC055,2025-01-25,3.0,West End,Central,Highway,Critical,Cloudy,40.6151,-74.0502,2025-01
-ACC056,2025-01-15,4.0,West End,South,Rural,Critical,Fog,40.885,-73.9217,2025-01
-ACC057,2025-04-27,17.0,West End,Central,Rural,Major,Cloudy,40.6778,-74.0506,2025-04
-ACC058,2025-03-25,16.0,West End,Central,Urban,Major,Clear,40.8141,-74.0531,2025-03
-ACC059,2025-03-11,17.0,Downtown,Central,Highway,Minor,Cloudy,40.8082,-73.9587,2025-03
-ACC060,2025-01-14,13.0,East Junction,South,Urban,Major,Clear,40.6621,-74.016,2025-01
+accident_id,accident_date,hour_of_day,location,zone,road_type,severity,weather,latitude,longitude
+ACC001,2025-01-01,23.0,East Junction,Central,Highway,Minor,Clear,40.803,-73.9216
+ACC002,2025-01-19,13.0,Downtown,North,Highway,Minor,Rain,40.7516,-74.0947
+ACC003,2025-02-23,20.0,South Bridge,West,Highway,Major,Fog,40.8428,-74.0987
+ACC004,2025-02-23,13.0,East Junction,East,Highway,Minor,Fog,40.6307,-74.024
+ACC005,2025-03-28,11.0,South Bridge,East,Highway,Critical,Cloudy,40.7609,-73.9054
+ACC006,2025-04-03,17.0,East Junction,South,Urban,Critical,Unknown,40.8114,-74.0908
+ACC007,2025-02-25,9.0,Downtown,Central,Highway,Major,Fog,40.736,-73.9332
+ACC008,2025-02-12,11.0,Central Park,East,Rural,Critical,Clear,40.7827,-74.0658
+ACC009,2025-02-06,14.0,West End,East,Rural,Critical,Rain,40.8054,-73.9314
+ACC010,2025-01-08,1.0,East Junction,West,Urban,Minor,Rain,40.8739,-73.9866
+ACC011,2025-03-07,20.0,West End,West,Rural,Major,Rain,40.6795,-74.0507
+ACC012,2025-03-24,18.0,West End,South,Urban,Major,Rain,40.8992,-74.0723
+ACC013,2025-04-03,1.0,Downtown,Central,Rural,Unknown,Cloudy,40.7789,-74.023
+ACC014,2025-04-17,8.0,South Bridge,North,Rural,Critical,Clear,40.8045,-73.9926
+ACC015,2025-03-25,20.0,East Junction,North,Urban,Major,Rain,40.7361,-73.9092
+ACC016,2025-03-17,5.0,South Bridge,North,Rural,Major,Rain,40.6459,-73.9475
+ACC017,2025-01-20,10.0,West End,North,Highway,Major,Fog,40.6718,-74.0518
+ACC018,2025-01-03,23.0,West End,North,Rural,Minor,Rain,40.7979,-73.9106
+ACC019,2025-01-03,16.0,South Bridge,West,Highway,Critical,Rain,40.8139,-74.0202
+ACC020,2025-03-15,16.0,West End,North,Highway,Minor,Clear,40.7014,-73.9823
+ACC021,2025-02-19,7.0,Downtown,North,Rural,Critical,Clear,40.6687,-73.9189
+ACC022,2025-03-03,16.0,Central Park,East,Rural,Major,Rain,40.7618,-73.9553
+ACC023,2025-04-08,15.0,West End,Central,Highway,Minor,Cloudy,40.7063,-74.0178
+ACC024,2025-01-22,20.0,Downtown,North,Urban,Critical,Fog,40.8402,-74.0781
+ACC025,2025-02-07,17.0,West End,Central,Urban,Minor,Fog,40.7388,-73.9251
+ACC027,2025-02-06,13.0,West End,West,Highway,Major,Clear,40.6494,-74.0996
+ACC028,2025-04-09,14.0,East Junction,West,Rural,Critical,Cloudy,40.6464,-74.0407
+ACC029,2025-01-19,23.0,South Bridge,North,Rural,Major,Clear,40.615,-74.0046
+ACC030,2025-02-02,16.0,Downtown,Central,Highway,Critical,Clear,40.8026,-74.053
+ACC031,2025-01-19,7.0,South Bridge,South,Highway,Critical,Clear,40.7258,-73.9833
+ACC032,2025-03-09,6.0,East Junction,Central,Urban,Major,Rain,40.8015,-74.04
+ACC033,2025-03-25,2.0,Downtown,West,Rural,Critical,Clear,40.622,-74.0574
+ACC034,2025-03-05,11.0,Downtown,Central,Urban,Major,Rain,40.7315,-73.9914
+ACC035,2025-03-20,20.0,South Bridge,North,Rural,Critical,Fog,40.8795,-74.0793
+ACC036,2025-02-09,3.0,Downtown,South,Highway,Major,Unknown,40.7814,-73.9565
+ACC037,2025-02-22,20.0,East Junction,South,Urban,Major,Clear,40.6277,-74.0153
+ACC038,2025-03-02,0.0,East Junction,Central,Rural,Major,Rain,40.8224,-73.9897
+ACC039,2025-04-18,0.0,Downtown,North,Rural,Minor,Clear,40.8504,-73.9835
+ACC040,2025-02-14,4.0,Downtown,East,Urban,Minor,Fog,40.663,-74.0501
+ACC041,2025-01-12,17.0,West End,South,Rural,Minor,Rain,40.8594,-73.9048
+ACC042,2025-02-14,0.0,Central Park,East,Urban,Critical,Rain,40.68,-73.9425
+ACC043,2025-01-13,1.0,West End,Central,Highway,Major,Fog,40.6916,-73.9409
+ACC044,2025-02-08,0.0,Central Park,West,Urban,Major,Clear,40.8901,-74.0442
+ACC045,2025-04-22,17.0,East Junction,North,Highway,Major,Rain,40.7742,-73.9033
+ACC046,2025-01-04,19.0,Unknown,East,Rural,Major,Cloudy,40.7819,-73.9977
+ACC047,2025-04-19,6.0,East Junction,North,Rural,Major,Clear,40.756,-73.9387
+ACC048,2025-02-12,13.0,Downtown,East,Rural,Major,Clear,40.8159,-74.0399
+ACC049,2025-03-22,13.0,East Junction,West,Rural,Major,Rain,40.6576,-73.967
+ACC050,2025-04-22,23.0,Central Park,South,Rural,Major,Cloudy,40.7644,-74.0999
+ACC051,2025-03-07,23.0,South Bridge,South,Rural,Major,Cloudy,40.7325,-73.9649
+ACC052,2025-04-26,23.0,Central Park,North,Urban,Critical,Fog,40.628,-73.9096
+ACC053,2025-02-22,9.0,Central Park,Central,Highway,Minor,Clear,40.6735,-74.005
+ACC054,2025-01-15,13.0,South Bridge,Central,Rural,Critical,Cloudy,40.7483,-74.0512
+ACC055,2025-01-25,3.0,West End,Central,Highway,Critical,Cloudy,40.6151,-74.0502
+ACC056,2025-01-15,4.0,West End,South,Rural,Critical,Fog,40.885,-73.9217
+ACC057,2025-04-27,17.0,West End,Central,Rural,Major,Cloudy,40.6778,-74.0506
+ACC058,2025-03-25,16.0,West End,Central,Urban,Major,Clear,40.8141,-74.0531
+ACC059,2025-03-11,17.0,Downtown,Central,Highway,Minor,Cloudy,40.8082,-73.9587
+ACC060,2025-01-14,13.0,East Junction,South,Urban,Major,Clear,40.6621,-74.016

@@ -39,3 +39,14 @@ VALUES
 ('West End'),
 ('Unknown');
 
+
+
+INSERT IGNORE INTO zones (zone_name)
+
+VALUES
+
+('North'),
+('South'),
+('East'),
+('West'),
+('Central');

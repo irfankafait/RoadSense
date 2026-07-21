@@ -190,3 +190,329 @@
 2026-07-21 20:40:18,183 | INFO | 59 accidents inserted.
 2026-07-21 20:40:18,186 | INFO | Database connection closed.
 2026-07-21 20:40:18,186 | INFO | Pipeline completed in 0.14 seconds.
+2026-07-21 22:36:00,495 | INFO | Starting RoadSense data cleaning pipeline.
+2026-07-21 22:36:00,513 | INFO | Dataset loaded successfully.
+2026-07-21 22:36:00,535 | INFO | Removed 1 duplicate rows.
+2026-07-21 22:36:00,555 | INFO | Filled 2 missing values in required columns.
+2026-07-21 22:36:00,563 | INFO | Cleaned data exported to D:\Python Learning\Notebooks\employee_data_cleaning_project\notebooks\RoadSense\data\processed\cleaned_accidents.csv
+2026-07-21 22:36:00,563 | INFO | RoadSense data cleaning pipeline completed successfully.
+2026-07-21 22:36:11,956 | INFO | DatabaseManager initialized.
+2026-07-21 22:36:12,280 | INFO | Database 'roadsense' is ready.
+2026-07-21 22:36:12,337 | INFO | Connected to MySQL successfully.
+2026-07-21 22:36:13,624 | INFO | All tables created successfully.
+2026-07-21 22:36:13,749 | INFO | Lookup tables seeded successfully.
+2026-07-21 22:36:22,177 | INFO | DatabaseManager initialized.
+2026-07-21 22:36:22,247 | INFO | Connected to MySQL successfully.
+2026-07-21 22:36:22,248 | INFO | ETL Loader initialized.
+2026-07-21 22:36:22,289 | INFO | Connected to MySQL successfully.
+2026-07-21 22:36:22,294 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 22:36:22,332 | ERROR | Insertion failed: Failed executing the operation; Not enough parameters for the SQL statement
+2026-07-21 22:36:22,334 | INFO | Database connection closed.
+2026-07-21 22:36:22,334 | INFO | Pipeline completed in 0.04 seconds.
+2026-07-21 22:45:35,496 | INFO | DatabaseManager initialized.
+2026-07-21 22:45:35,571 | INFO | Connected to MySQL successfully.
+2026-07-21 22:45:35,572 | INFO | ETL Loader initialized.
+2026-07-21 22:45:35,613 | INFO | Connected to MySQL successfully.
+2026-07-21 22:45:35,616 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 22:45:35,662 | INFO | 59 accidents inserted.
+2026-07-21 22:45:35,665 | INFO | Database connection closed.
+2026-07-21 22:45:35,666 | INFO | Pipeline completed in 0.05 seconds.
+2026-07-21 22:45:49,362 | INFO | DatabaseManager initialized.
+2026-07-21 22:45:49,459 | INFO | Database 'roadsense' is ready.
+2026-07-21 22:45:49,512 | INFO | Connected to MySQL successfully.
+2026-07-21 22:45:49,544 | INFO | All tables created successfully.
+2026-07-21 22:45:49,567 | INFO | Lookup tables seeded successfully.
+2026-07-21 22:45:56,056 | INFO | DatabaseManager initialized.
+2026-07-21 22:45:56,132 | INFO | Connected to MySQL successfully.
+2026-07-21 22:45:56,133 | INFO | ETL Loader initialized.
+2026-07-21 22:45:56,167 | INFO | Connected to MySQL successfully.
+2026-07-21 22:45:56,171 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 22:45:56,212 | INFO | 59 accidents inserted.
+2026-07-21 22:45:56,216 | INFO | Database connection closed.
+2026-07-21 22:45:56,216 | INFO | Pipeline completed in 0.05 seconds.
+2026-07-21 23:07:39,814 | INFO | DatabaseManager initialized.
+2026-07-21 23:07:39,898 | INFO | Connected to MySQL successfully.
+2026-07-21 23:07:39,898 | INFO | ETL Loader initialized.
+2026-07-21 23:07:39,945 | INFO | Connected to MySQL successfully.
+2026-07-21 23:07:39,948 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 23:07:39,960 | ERROR | Missing required columns: ['location_id', 'zone_id', 'weather_id', 'severity_id', 'road_type_id']
+2026-07-21 23:07:39,964 | INFO | Database connection closed.
+2026-07-21 23:07:39,964 | INFO | Pipeline completed in 0.02 seconds.
+2026-07-21 23:11:12,722 | INFO | DatabaseManager initialized.
+2026-07-21 23:11:12,802 | INFO | Connected to MySQL successfully.
+2026-07-21 23:11:12,803 | INFO | ETL Loader initialized.
+2026-07-21 23:11:12,847 | INFO | Connected to MySQL successfully.
+2026-07-21 23:11:12,851 | INFO | Lookup dictionaries loaded successfully.
+2026-07-21 23:11:12,862 | INFO | CSV validation completed successfully.
+2026-07-21 23:11:12,900 | INFO | 59 accidents inserted.
+2026-07-21 23:11:12,903 | INFO | Database connection closed.
+2026-07-21 23:11:12,903 | INFO | Pipeline completed in 0.06 seconds.
+2026-07-22 00:22:30,101 | INFO | DatabaseManager initialized.
+2026-07-22 00:22:30,189 | INFO | Connected to MySQL successfully.
+2026-07-22 00:22:30,190 | INFO | ETL Loader initialized.
+2026-07-22 00:22:30,240 | INFO | Connected to MySQL successfully.
+2026-07-22 00:22:30,244 | INFO | Lookup dictionaries loaded successfully.
+2026-07-22 00:22:30,254 | INFO | CSV validation completed successfully.
+2026-07-22 00:22:30,255 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,255 | WARNING | Skipping row 1
+2026-07-22 00:22:30,256 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,256 | WARNING | Skipping row 2
+2026-07-22 00:22:30,257 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,257 | WARNING | Skipping row 3
+2026-07-22 00:22:30,258 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,258 | WARNING | Skipping row 4
+2026-07-22 00:22:30,258 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,259 | WARNING | Skipping row 5
+2026-07-22 00:22:30,259 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,259 | WARNING | Skipping row 6
+2026-07-22 00:22:30,260 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,260 | WARNING | Skipping row 7
+2026-07-22 00:22:30,261 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,262 | WARNING | Skipping row 8
+2026-07-22 00:22:30,263 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,263 | WARNING | Skipping row 9
+2026-07-22 00:22:30,264 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,264 | WARNING | Skipping row 10
+2026-07-22 00:22:30,265 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,265 | WARNING | Skipping row 11
+2026-07-22 00:22:30,266 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,267 | WARNING | Skipping row 12
+2026-07-22 00:22:30,268 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,268 | WARNING | Skipping row 13
+2026-07-22 00:22:30,269 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,270 | WARNING | Skipping row 14
+2026-07-22 00:22:30,270 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,271 | WARNING | Skipping row 15
+2026-07-22 00:22:30,272 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,272 | WARNING | Skipping row 16
+2026-07-22 00:22:30,273 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,274 | WARNING | Skipping row 17
+2026-07-22 00:22:30,275 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,275 | WARNING | Skipping row 18
+2026-07-22 00:22:30,276 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,276 | WARNING | Skipping row 19
+2026-07-22 00:22:30,277 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,278 | WARNING | Skipping row 20
+2026-07-22 00:22:30,278 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,279 | WARNING | Skipping row 21
+2026-07-22 00:22:30,279 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,280 | WARNING | Skipping row 22
+2026-07-22 00:22:30,280 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,281 | WARNING | Skipping row 23
+2026-07-22 00:22:30,281 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,288 | WARNING | Skipping row 24
+2026-07-22 00:22:30,289 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,289 | WARNING | Skipping row 25
+2026-07-22 00:22:30,290 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,291 | WARNING | Skipping row 26
+2026-07-22 00:22:30,291 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,292 | WARNING | Skipping row 27
+2026-07-22 00:22:30,292 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,293 | WARNING | Skipping row 28
+2026-07-22 00:22:30,294 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,295 | WARNING | Skipping row 29
+2026-07-22 00:22:30,295 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,296 | WARNING | Skipping row 30
+2026-07-22 00:22:30,296 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,296 | WARNING | Skipping row 31
+2026-07-22 00:22:30,297 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,297 | WARNING | Skipping row 32
+2026-07-22 00:22:30,298 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,298 | WARNING | Skipping row 33
+2026-07-22 00:22:30,298 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,299 | WARNING | Skipping row 34
+2026-07-22 00:22:30,299 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,304 | WARNING | Skipping row 35
+2026-07-22 00:22:30,306 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,306 | WARNING | Skipping row 36
+2026-07-22 00:22:30,307 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,308 | WARNING | Skipping row 37
+2026-07-22 00:22:30,310 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,311 | WARNING | Skipping row 38
+2026-07-22 00:22:30,312 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,312 | WARNING | Skipping row 39
+2026-07-22 00:22:30,313 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,313 | WARNING | Skipping row 40
+2026-07-22 00:22:30,314 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,314 | WARNING | Skipping row 41
+2026-07-22 00:22:30,315 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,315 | WARNING | Skipping row 42
+2026-07-22 00:22:30,315 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,315 | WARNING | Skipping row 43
+2026-07-22 00:22:30,316 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,317 | WARNING | Skipping row 44
+2026-07-22 00:22:30,318 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,319 | WARNING | Skipping row 45
+2026-07-22 00:22:30,320 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,321 | WARNING | Skipping row 46
+2026-07-22 00:22:30,323 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:22:30,324 | WARNING | Skipping row 47
+2026-07-22 00:22:30,326 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:22:30,326 | WARNING | Skipping row 48
+2026-07-22 00:22:30,327 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,327 | WARNING | Skipping row 49
+2026-07-22 00:22:30,328 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,328 | WARNING | Skipping row 50
+2026-07-22 00:22:30,328 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:22:30,329 | WARNING | Skipping row 51
+2026-07-22 00:22:30,329 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,330 | WARNING | Skipping row 52
+2026-07-22 00:22:30,331 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,331 | WARNING | Skipping row 53
+2026-07-22 00:22:30,332 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,332 | WARNING | Skipping row 54
+2026-07-22 00:22:30,333 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,333 | WARNING | Skipping row 55
+2026-07-22 00:22:30,334 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,334 | WARNING | Skipping row 56
+2026-07-22 00:22:30,335 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,336 | WARNING | Skipping row 57
+2026-07-22 00:22:30,338 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:22:30,342 | WARNING | Skipping row 58
+2026-07-22 00:22:30,343 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:22:30,344 | WARNING | Skipping row 59
+2026-07-22 00:22:30,345 | INFO | 0 accidents inserted.
+2026-07-22 00:22:30,345 | INFO | successfully processed: 0
+2026-07-22 00:22:30,346 | INFO | Skipped rows: 59
+2026-07-22 00:22:30,350 | INFO | Database connection closed.
+2026-07-22 00:22:30,353 | INFO | Pipeline completed in 0.11 seconds.
+2026-07-22 00:28:36,210 | INFO | DatabaseManager initialized.
+2026-07-22 00:28:36,295 | INFO | Connected to MySQL successfully.
+2026-07-22 00:28:36,296 | INFO | ETL Loader initialized.
+2026-07-22 00:28:36,338 | INFO | Connected to MySQL successfully.
+2026-07-22 00:28:36,342 | INFO | Lookup dictionaries loaded successfully.
+2026-07-22 00:28:36,354 | INFO | CSV validation completed successfully.
+2026-07-22 00:28:36,355 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,355 | WARNING | Skipping row 1
+2026-07-22 00:28:36,356 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,356 | WARNING | Skipping row 2
+2026-07-22 00:28:36,357 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,357 | WARNING | Skipping row 3
+2026-07-22 00:28:36,357 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,357 | WARNING | Skipping row 4
+2026-07-22 00:28:36,358 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,358 | WARNING | Skipping row 5
+2026-07-22 00:28:36,359 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,359 | WARNING | Skipping row 6
+2026-07-22 00:28:36,359 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,364 | WARNING | Skipping row 7
+2026-07-22 00:28:36,365 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,366 | WARNING | Skipping row 8
+2026-07-22 00:28:36,366 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,366 | WARNING | Skipping row 9
+2026-07-22 00:28:36,367 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,367 | WARNING | Skipping row 10
+2026-07-22 00:28:36,368 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,368 | WARNING | Skipping row 11
+2026-07-22 00:28:36,368 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,369 | WARNING | Skipping row 12
+2026-07-22 00:28:36,369 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,369 | WARNING | Skipping row 13
+2026-07-22 00:28:36,370 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,370 | WARNING | Skipping row 14
+2026-07-22 00:28:36,371 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,371 | WARNING | Skipping row 15
+2026-07-22 00:28:36,372 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,372 | WARNING | Skipping row 16
+2026-07-22 00:28:36,373 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,374 | WARNING | Skipping row 17
+2026-07-22 00:28:36,374 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,374 | WARNING | Skipping row 18
+2026-07-22 00:28:36,376 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,376 | WARNING | Skipping row 19
+2026-07-22 00:28:36,379 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,379 | WARNING | Skipping row 20
+2026-07-22 00:28:36,380 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,380 | WARNING | Skipping row 21
+2026-07-22 00:28:36,382 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,383 | WARNING | Skipping row 22
+2026-07-22 00:28:36,383 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,383 | WARNING | Skipping row 23
+2026-07-22 00:28:36,384 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,384 | WARNING | Skipping row 24
+2026-07-22 00:28:36,385 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,386 | WARNING | Skipping row 25
+2026-07-22 00:28:36,387 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,387 | WARNING | Skipping row 26
+2026-07-22 00:28:36,388 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,388 | WARNING | Skipping row 27
+2026-07-22 00:28:36,389 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,389 | WARNING | Skipping row 28
+2026-07-22 00:28:36,390 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,390 | WARNING | Skipping row 29
+2026-07-22 00:28:36,390 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,390 | WARNING | Skipping row 30
+2026-07-22 00:28:36,391 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,391 | WARNING | Skipping row 31
+2026-07-22 00:28:36,392 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,392 | WARNING | Skipping row 32
+2026-07-22 00:28:36,393 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,396 | WARNING | Skipping row 33
+2026-07-22 00:28:36,397 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,397 | WARNING | Skipping row 34
+2026-07-22 00:28:36,398 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,398 | WARNING | Skipping row 35
+2026-07-22 00:28:36,399 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,399 | WARNING | Skipping row 36
+2026-07-22 00:28:36,400 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,400 | WARNING | Skipping row 37
+2026-07-22 00:28:36,401 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,402 | WARNING | Skipping row 38
+2026-07-22 00:28:36,403 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,404 | WARNING | Skipping row 39
+2026-07-22 00:28:36,404 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,405 | WARNING | Skipping row 40
+2026-07-22 00:28:36,405 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,406 | WARNING | Skipping row 41
+2026-07-22 00:28:36,406 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,406 | WARNING | Skipping row 42
+2026-07-22 00:28:36,407 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,407 | WARNING | Skipping row 43
+2026-07-22 00:28:36,407 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,408 | WARNING | Skipping row 44
+2026-07-22 00:28:36,408 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,409 | WARNING | Skipping row 45
+2026-07-22 00:28:36,413 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,414 | WARNING | Skipping row 46
+2026-07-22 00:28:36,415 | WARNING | Zone 'East' does not exist in the lookup table.
+2026-07-22 00:28:36,415 | WARNING | Skipping row 47
+2026-07-22 00:28:36,416 | WARNING | Zone 'West' does not exist in the lookup table.
+2026-07-22 00:28:36,416 | WARNING | Skipping row 48
+2026-07-22 00:28:36,416 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,417 | WARNING | Skipping row 49
+2026-07-22 00:28:36,418 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,418 | WARNING | Skipping row 50
+2026-07-22 00:28:36,420 | WARNING | Zone 'North' does not exist in the lookup table.
+2026-07-22 00:28:36,420 | WARNING | Skipping row 51
+2026-07-22 00:28:36,422 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,423 | WARNING | Skipping row 52
+2026-07-22 00:28:36,423 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,424 | WARNING | Skipping row 53
+2026-07-22 00:28:36,424 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,424 | WARNING | Skipping row 54
+2026-07-22 00:28:36,425 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,425 | WARNING | Skipping row 55
+2026-07-22 00:28:36,426 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,432 | WARNING | Skipping row 56
+2026-07-22 00:28:36,433 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,433 | WARNING | Skipping row 57
+2026-07-22 00:28:36,434 | WARNING | Zone 'Central' does not exist in the lookup table.
+2026-07-22 00:28:36,434 | WARNING | Skipping row 58
+2026-07-22 00:28:36,435 | WARNING | Zone 'South' does not exist in the lookup table.
+2026-07-22 00:28:36,436 | WARNING | Skipping row 59
+2026-07-22 00:28:36,438 | INFO | 0 accidents inserted.
+2026-07-22 00:28:36,438 | INFO | successfully processed: 0
+2026-07-22 00:28:36,439 | INFO | Skipped rows: 59
+2026-07-22 00:28:36,442 | INFO | Database connection closed.
+2026-07-22 00:28:36,442 | INFO | Pipeline completed in 0.10 seconds.
+2026-07-22 00:40:14,876 | INFO | DatabaseManager initialized.
+2026-07-22 00:40:14,970 | INFO | Connected to MySQL successfully.
+2026-07-22 00:40:14,971 | INFO | ETL Loader initialized.
+2026-07-22 00:40:15,005 | INFO | Connected to MySQL successfully.
+2026-07-22 00:40:15,012 | INFO | Lookup dictionaries loaded successfully.
+2026-07-22 00:40:15,023 | INFO | CSV validation completed successfully.
+2026-07-22 00:40:15,062 | INFO | 59 accidents inserted.
+2026-07-22 00:40:15,062 | INFO | successfully processed: 59
+2026-07-22 00:40:15,063 | INFO | Skipped rows: 0
+2026-07-22 00:40:15,065 | INFO | Database connection closed.
+2026-07-22 00:40:15,065 | INFO | Pipeline completed in 0.06 seconds.

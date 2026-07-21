@@ -152,18 +152,34 @@ class DatabaseManager:
         
         accident_date,
 
+        hour_of_day,
+
         location_id,
+
+        zone_id,
 
         weather_id,
 
         severity_id,
 
-        road_type_id
+        road_type_id,
+
+        latitude,
+
+        longitude
 
         )
 
         VALUES (
         
+        %s,
+
+        %s,
+
+        %s,
+
+        %s,
+
         %s,
 
         %s,
