@@ -246,6 +246,14 @@ class ETLoader:
 
             skipped_rows = 0
 
+            # Why did we use itertuples() against interrows(), because iterrows() returns as a pandas series,
+            # each row needs to converted by pandas in series object one by one. But, itertuples() returns
+            # lightweight object called a named tuple. It is faster because Python does not have to perform
+            # dictionary-style lookup. Switching to itertuples() is a good improvement, but the pipeline still 
+            # builds a complete records list before inserting into database and it consumes a lot of memory,
+            # if millions of rows there. So we need to convert it in Batch Processing. (for example, 1,000)
+            # records at a time
+
             for index, row in enumerate(df.itertuples(index=False), start=1):
 
                 if not self.validate_row(row):
@@ -261,7 +269,17 @@ class ETLoader:
 
                 successful_rows += 1
 
-            self.load(records)
+                if len(records) >= BATCH_SIZE:
+
+                    self.load(records)
+
+                    logger.info(f'Inserted batch of {BATCH_SIZE} records.')
+                    records.clear()
+
+            if records:
+                self.load(records)
+
+                logger.info(f'Inserted final barch of {len(records)} records.')
 
             logger.info(f'successfully processed: {successful_rows}')
 
