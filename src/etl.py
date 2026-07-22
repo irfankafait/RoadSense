@@ -220,11 +220,35 @@ class ETLoader:
         self.db.insert_accidents(records)
 
 
+
+    def export_failed_records(self, failed_records):
+
+        """
+        Export failed records to a CSV file.
+        """
+        
+        # If every row succeeded Don't create an empty CSV.
+
+        if not failed_records:
+
+            return
+        
+        # A DataFrame can easily become, CSV, Excel, SQL
+
+        failed_df = pd.DataFrame(failed_records)
+
+        failed_df.to_csv(PROCESSED_DATA_DIR / 'failed_records.csv', index=False)
+
+        logger.info(f'Exported {len(failed_records)} failed records.')
+
+
+
+
     def run(self):
 
         """
         Execute the complete ETL pipeline.
-        """ 
+        """
 
         if not self.db.connect():
 
@@ -246,6 +270,8 @@ class ETLoader:
 
             skipped_rows = 0
 
+            failed_records = []
+
             # Why did we use itertuples() against interrows(), because iterrows() returns as a pandas series,
             # each row needs to converted by pandas in series object one by one. But, itertuples() returns
             # lightweight object called a named tuple. It is faster because Python does not have to perform
@@ -256,34 +282,80 @@ class ETLoader:
 
             for index, row in enumerate(df.itertuples(index=False), start=1):
 
-                if not self.validate_row(row):
-                    logger.warning(f'Skipping row {index + 1}')
+                try:
+                    if not self.validate_row(row):
+                        logger.warning(f'Skipping row {index} because validation failed.')
+
+                        failed_records.append({
+                            'row_number': index,
+                            'error': 'Validation Failed',
+                            'accident_date': row.accident_date,
+                             "hour_of_day": row.hour_of_day,
+                            'location': row.location,
+                            "zone": row.zone,
+                            'weather': row.weather,
+                            'severity': row.severity,
+                            'road_type': row.road_type,
+                            "latitude": row.latitude,
+                            "longitude": row.longitude
+                        })
+
+                        skipped_rows += 1
+
+                        continue
+
+                    record = self.transform_row(row)
+
+                    records.append(record)
+
+                    successful_rows += 1
+
+                    if len(records) >= BATCH_SIZE:
+
+                        self.load(records)
+
+                        logger.info(f'Inserted batch of {BATCH_SIZE} records.')
+                        
+                        records.clear()
+
+                except Exception as e:
+
+                    logger.exception(f'Unexpected error on row {index}: Data: {row}')
+
+                    failed_records.append({
+                        "row_number": index,
+                        "error": str(e),
+                        'accident_date': row.accident_date,
+                             "hour_of_day": row.hour_of_day,
+                            'location': row.location,
+                            "zone": row.zone,
+                            'weather': row.weather,
+                            'severity': row.severity,
+                            'road_type': row.road_type,
+                            "latitude": row.latitude,
+                            "longitude": row.longitude
+                    })
 
                     skipped_rows += 1
 
-                    continue
-
-                record = self.transform_row(row)
-
-                records.append(record)
-
-                successful_rows += 1
-
-                if len(records) >= BATCH_SIZE:
-
-                    self.load(records)
-
-                    logger.info(f'Inserted batch of {BATCH_SIZE} records.')
-                    records.clear()
 
             if records:
-                self.load(records)
 
-                logger.info(f'Inserted final barch of {len(records)} records.')
+                try:
+                    self.load(records)
 
-            logger.info(f'successfully processed: {successful_rows}')
+                    logger.info(f'Inserted final barch of {len(records)} records.')
 
-            logger.info(f'Skipped rows: {skipped_rows}')    
+                except Exception:
+
+                        logger.exception('Failed to insert final batch')
+
+                logger.info(f'successfully processed: {successful_rows}')
+
+                logger.info(f'Skipped rows: {skipped_rows}')
+
+                self.export_failed_records(failed_records)   
+
 
 
         finally:

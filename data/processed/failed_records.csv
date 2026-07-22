@@ -1,0 +1,2 @@
+row_number,error,accident_date,hour_of_day,location,zone,weather,severity,road_type,latitude,longitude
+59,Validation Failed,2025-01-14,13.0,Mars,South,Clear,Major,Urban,40.6621,-74.016
