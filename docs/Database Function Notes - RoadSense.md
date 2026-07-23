@@ -342,6 +342,12 @@ rollback()
 
 close()
 
+
+## To make clear this function: def create_database(self):
+
+Added a fuction (**DATABASE_CONFIG) from config.py to make the 'mysql.connector.connect' clean. 
+
+
 ---
 
 ## Cursor

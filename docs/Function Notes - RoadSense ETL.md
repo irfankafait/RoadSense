@@ -419,7 +419,14 @@ failed_record = []
 
 
 
+## Create environment variable file
 
+.env file is created to make the database name, password, username or other secret information confidential.
+
+Create a new function "def get_required_env(variable_name):" to read required environment variables and raise an early error in config.py. Then change os.getenv to get_required_env function. Also created DATABASE_CONFIG dictionary to make the MySQL connection clean in database.py. 
+
+The ** operator unpacks the dictionary into keyword arguments.
+This keeps the connection code cleaner and makes it easier to add new settings later.
 
 
 

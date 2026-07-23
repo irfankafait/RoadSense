@@ -21,10 +21,7 @@ class DatabaseManager:
         """
         try:
             temp_connection = mysql.connector.connect(
-                host=DB_HOST,
-                port=DB_PORT,
-                user=DB_USER,
-                password=DB_PASSWORD
+                **DATABASE_CONFIG
             )
 
             temp_cursor = temp_connection.cursor()
@@ -50,11 +47,7 @@ class DatabaseManager:
         """
         try:
             self.connection = mysql.connector.connect(
-                host = DB_HOST,
-                port = DB_PORT,
-                database = DB_NAME,
-                user = DB_USER,
-                password = DB_PASSWORD
+                **DATABASE_CONFIG
             )
 
             self.cursor = self.connection.cursor()

@@ -30,8 +30,6 @@ dist/
 *.egg-info/
 
 
-config.py
-
 
 # OS Files
 .DS_Store

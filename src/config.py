@@ -4,6 +4,21 @@ import os
 
 load_dotenv()
 
+
+def get_required_env(variable_name):
+    """
+    Read a required environment variable.
+    Raise an exception if it is missing.
+    """
+
+    value = os.getenv(variable_name)
+
+    if value is None:
+
+        raise ValueError(f'Missing required environment variable: {variable_name}')
+
+    return value
+
 # ==========================================================
 # Project Root
 # ==========================================================
@@ -89,12 +104,32 @@ for file in files:
 # Database Configuration
 # ==========================================================
 
-DB_HOST = os.getenv('DB_HOST')
-DB_PORT = int(os.getenv('DB_PORT'))
-DB_NAME = os.getenv('DB_NAME')
-DB_USER = os.getenv('DB_USER')
-DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_HOST = get_required_env('DB_HOST')
 
+# To show a clear message
+
+try:
+
+    DB_PORT = int(os.getenv('DB_PORT', '3306'))
+
+except ValueError:
+    raise ValueError('DB_PORT must be integer.')
+
+
+DB_NAME = get_required_env('DB_NAME')
+DB_USER = get_required_env('DB_USER')
+DB_PASSWORD = get_required_env('DB_PASSWORD')
+
+# To make the connection code cleaner
+
+DATABASE_CONFIG = {
+
+    'host': DB_HOST,
+    'port': DB_PORT,
+    'database': DB_NAME,
+    'user': DB_USER,
+    'password': DB_PASSWORD
+}
 
 # ==========================================================
 # Insert Data in Batch
