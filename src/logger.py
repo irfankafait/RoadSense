@@ -3,7 +3,7 @@
 # ==========================================================
 
 import logging
-from config import LOG_DIR
+from .config import LOG_DIR
 
 
 

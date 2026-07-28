@@ -41,6 +41,7 @@ LOG_DIR = PROJECT_ROOT / 'logs'
 
 DOCS_DIR = PROJECT_ROOT / 'docs'
 SQL_DIR = PROJECT_ROOT / 'sql'
+TESTS_DIR = PROJECT_ROOT / 'tests'
 
 
 # Create folders if missing
@@ -52,7 +53,8 @@ for folder in [
     EXTERNAL_DATA_DIR,
     DOCS_DIR,
     LOG_DIR,
-    SQL_DIR
+    SQL_DIR,
+    TESTS_DIR
     
 ]:
     
@@ -93,7 +95,8 @@ files = [
     PROJECT_ROOT / 'sql/003_seed_lookup_tables.sql',
     PROJECT_ROOT / 'sql/004_create_indexes.sql',
     PROJECT_ROOT / 'sql/005_create_views.sql',
-    PROJECT_ROOT / 'src/etl.py'
+    PROJECT_ROOT / 'src/etl.py',
+    PROJECT_ROOT / 'tests/test_etl.py'
 ]
 
 for file in files:

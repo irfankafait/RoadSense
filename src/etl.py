@@ -1,7 +1,7 @@
 import pandas as pd
-from database import DatabaseManager
-from logger import logger
-from config import *
+from .database import DatabaseManager
+from .logger import logger
+from .config import *
 from time import perf_counter
 
 class ETLoader:
@@ -12,11 +12,14 @@ class ETLoader:
     and Load process.
     """
 
-    def __init__(self):
+    def __init__(self, db=None): # Why db=None? This means: 
+                                 #If no database is supplied use None, else use database. 
+                                 # And None means here, "If noboday gives me a database, I will create my own."
         
-        self.db = DatabaseManager()
+        self.db = db or DatabaseManager() # The expression db or DatabaseManager() is a python Idiom. 
 
-        self.db.connect()
+        if db is None:
+            self.db.connect()
 
         self.locations = {}
         self.weather = {}
@@ -290,14 +293,14 @@ class ETLoader:
                             'row_number': index,
                             'error': 'Validation Failed',
                             'accident_date': row.accident_date,
-                             "hour_of_day": row.hour_of_day,
+                             'hour_of_day': row.hour_of_day,
                             'location': row.location,
-                            "zone": row.zone,
+                            'zone': row.zone,
                             'weather': row.weather,
                             'severity': row.severity,
                             'road_type': row.road_type,
-                            "latitude": row.latitude,
-                            "longitude": row.longitude
+                            'latitude': row.latitude,
+                            'longitude': row.longitude
                         })
 
                         skipped_rows += 1

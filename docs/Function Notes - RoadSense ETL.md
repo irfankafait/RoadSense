@@ -529,3 +529,40 @@ Logging
 ↓
 
 Pipeline Completed
+
+
+
+## Unit Testing
+
+There are different types of testing.
+
+| Type             | Purpose                                      |
+| ---------------- | -------------------------------------------- |
+| Unit Test        | Tests one function or method in isolation.   |
+| Integration Test | Tests how multiple components work together. |
+| System Test      | Tests the complete application.              |
+| End-to-End Test  | Simulates a real user workflow.              |
+
+
+We will pytest rather than unittest. Because it is good. But the Python community overwhelmingly prefers
+
+Why?
+
+Simpler syntax.
+Better error messages.
+Less boilerplate.
+Powerful fixtures.
+Large ecosystem.
+Widely used in industry.
+
+Why import ETLLoader class? Because we are testing its methods.
+
+## Dependency Injection
+
+A design technique where an object receives the objects it depends on from outside instead of creating them internally.
+
+I have changed the ETLoader() class to remove the dependency on DataBase Manager (For example, ETLoader() conect to SQL Database everytime) through this techneque. By this we can make easier testing, replacing,and maintaining.
+
+## Loose Coupling
+
+Components know as little as possible about each other, making them easier to replace, test, and maintain.

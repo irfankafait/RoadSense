@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
-from config import * 
-from logger import logger
+from .config import * 
+from .logger import logger
 
 
 class DatabaseManager:
