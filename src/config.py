@@ -96,7 +96,8 @@ files = [
     PROJECT_ROOT / 'sql/004_create_indexes.sql',
     PROJECT_ROOT / 'sql/005_create_views.sql',
     PROJECT_ROOT / 'src/etl.py',
-    PROJECT_ROOT / 'tests/test_etl.py'
+    PROJECT_ROOT / 'tests/test_etl.py',
+    PROJECT_ROOT / 'src/app.py'
 ]
 
 for file in files:
