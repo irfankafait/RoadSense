@@ -258,6 +258,10 @@ class ETLoader:
             logger.error('Database connection failed.')
 
             return
+
+        # Remove previous accident records
+        self.db.clear_accidents()
+
         start = perf_counter()
 
         try:

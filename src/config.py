@@ -44,6 +44,12 @@ SQL_DIR = PROJECT_ROOT / 'sql'
 TESTS_DIR = PROJECT_ROOT / 'tests'
 
 
+# ==========================================================
+# Application Folders
+# ==========================================================
+
+SERVICES_DIR = PROJECT_ROOT / 'src/services'
+
 # Create folders if missing
 
 for folder in [
@@ -54,7 +60,8 @@ for folder in [
     DOCS_DIR,
     LOG_DIR,
     SQL_DIR,
-    TESTS_DIR
+    TESTS_DIR,
+    SERVICES_DIR
     
 ]:
     
@@ -90,14 +97,15 @@ HOTSPOT_RANKING_FILE = (
 )
 
 files = [
-    PROJECT_ROOT / 'logs/logger.py',
+    # PROJECT_ROOT / 'logs/logger.py',
     PROJECT_ROOT / 'sql/002_create_tables.sql',
     PROJECT_ROOT / 'sql/003_seed_lookup_tables.sql',
     PROJECT_ROOT / 'sql/004_create_indexes.sql',
     PROJECT_ROOT / 'sql/005_create_views.sql',
-    PROJECT_ROOT / 'src/etl.py',
-    PROJECT_ROOT / 'tests/test_etl.py',
-    PROJECT_ROOT / 'src/app.py'
+    # PROJECT_ROOT / 'src/etl.py',
+    # PROJECT_ROOT / 'tests/test_etl.py',
+    # PROJECT_ROOT / 'src/app.py',
+    # PROJECT_ROOT / 'src/services/accident_service.py'
 ]
 
 for file in files:

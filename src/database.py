@@ -208,6 +208,20 @@ class DatabaseManager:
 
             raise
 
+    def clear_accidents(self):
+
+        """
+        Remove all accident records.
+        """
+
+        self.cursor.execute('TRUNCATE TABLE accidents')
+
+        self.connection.commit()
+
+        logger.info('Accidents table cleared.')
+
+
+
     def disconnect(self):
 
         if self.cursor:
