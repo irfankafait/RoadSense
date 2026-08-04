@@ -566,3 +566,75 @@ I have changed the ETLoader() class to remove the dependency on DataBase Manager
 ## Loose Coupling
 
 Components know as little as possible about each other, making them easier to replace, test, and maintain.
+
+
+
+## FastAPI Architecture
+
+
+Browser: Browser sends an HTTP request.
+   ↓
+FastAPI: FastAPI receives every incoming request.
+   ↓
+Router: FastAPI finds the correct router for the requested URL. At startup, FastAPI registered that router. app.include_router(statistics_router)
+   ↓
+Service: The service contains the business logic and asks the DatabaseManager to execute SQL queries.
+   ↓
+DatabaseManager: The DatabaseManager executes SQL queries on the MySQL database and fetches the results.
+   ↓
+MySQL: MySQL returns raw data.
+   ↓
+Pydantic: Does this dictionary match the expected model? Without Pydantic, the frontend would receive inconsistent data.
+   ↓
+Browser
+
+1. The browser sends an HTTP request.
+
+↓
+
+2. FastAPI receives the request.
+
+↓
+
+3. FastAPI checks which router owns the URL.
+
+↓
+
+4. The router calls the appropriate service method.
+
+↓
+
+5. The service contains the business logic.
+
+↓
+
+6. The service asks DatabaseManager to execute SQL.
+
+↓
+
+7. DatabaseManager communicates with MySQL.
+
+↓
+
+8. MySQL returns raw data.
+
+↓
+
+9. The service converts raw SQL results into a structured Python dictionary.
+
+↓
+
+10. Pydantic validates that the dictionary matches the expected API response model.
+
+↓
+
+11. FastAPI converts the validated data into JSON.
+
+↓
+
+12. The browser receives the JSON response.
+
+
+## SQL Injection
+
+This category of vulnerability is called SQL Injection, and avoiding it is a fundamental security practice.

@@ -116,14 +116,27 @@ class DatabaseManager:
 
             logger.error(f'Failed to seed lookup tables: {e}')   
 
-    def fetch_all(self, query):
+    def fetch_all(self, query, params=None):
 
         """
         Execute a SELECT query and return all rows.
+        
+
+        Parameters
+        ----------
+        query : str
+            SQL SELECT statement.
+
+        params : tuple | list | None
+            Optional SQL parameters used for parameterized queries.
         """
 
         try:
-            self.cursor.execute(query)
+            if params is None:
+                self.cursor.execute(query)
+
+            else:
+                self.cursor.execute(query, params)
 
             return self.cursor.fetchall()
         
