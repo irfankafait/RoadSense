@@ -51,6 +51,7 @@ TESTS_DIR = PROJECT_ROOT / 'tests'
 SERVICES_DIR = PROJECT_ROOT / 'src/services'
 MODELS_DIR = PROJECT_ROOT / 'src/models'
 API_DIR = PROJECT_ROOT / 'src/api/v1'
+REPOSITORIES_DIR = PROJECT_ROOT / 'src/repositories'
 
 
 # Create folders if missing
@@ -66,7 +67,8 @@ for folder in [
     TESTS_DIR,
     SERVICES_DIR,
     MODELS_DIR,
-    API_DIR
+    API_DIR,
+    REPOSITORIES_DIR
     
 ]:
     
@@ -113,6 +115,7 @@ files = [
     # PROJECT_ROOT / 'src/services/accident_service.py'
     # PROJECT_ROOT / 'src/models/statistics.py'
     # PROJECT_ROOT / 'src/api/v1/statistics.py'
+    # PROJECT_ROOT / 'src/repositories/accident_repository.py'
 ]
 
 for file in files:

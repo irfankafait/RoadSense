@@ -638,3 +638,33 @@ Browser
 ## SQL Injection
 
 This category of vulnerability is called SQL Injection, and avoiding it is a fundamental security practice.
+
+## The Repository
+
+Talk to the database in terms of RoadSense's business concepts.
+The Problem
+
+Open your
+
+src/services/accident_service.py
+
+Your service currently contains SQL like this:
+
+SELECT COUNT(*)
+FROM accidents
+
+Then another SQL query.
+
+Then another.
+
+Then another.
+
+Eventually this file becomes
+
+800 lines
+
+1200 lines
+
+1800 lines
+
+because every feature adds more SQL. Repository solve this problem.
