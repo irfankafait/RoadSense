@@ -49,6 +49,9 @@ TESTS_DIR = PROJECT_ROOT / 'tests'
 # ==========================================================
 
 SERVICES_DIR = PROJECT_ROOT / 'src/services'
+MODELS_DIR = PROJECT_ROOT / 'src/models'
+API_DIR = PROJECT_ROOT / 'src/api/v1'
+
 
 # Create folders if missing
 
@@ -61,7 +64,9 @@ for folder in [
     LOG_DIR,
     SQL_DIR,
     TESTS_DIR,
-    SERVICES_DIR
+    SERVICES_DIR,
+    MODELS_DIR,
+    API_DIR
     
 ]:
     
@@ -106,6 +111,8 @@ files = [
     # PROJECT_ROOT / 'tests/test_etl.py',
     # PROJECT_ROOT / 'src/app.py',
     # PROJECT_ROOT / 'src/services/accident_service.py'
+    # PROJECT_ROOT / 'src/models/statistics.py'
+    # PROJECT_ROOT / 'src/api/v1/statistics.py'
 ]
 
 for file in files:
