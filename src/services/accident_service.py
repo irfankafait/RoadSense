@@ -1,4 +1,5 @@
 from src.database import DatabaseManager
+from src.repositories.accident_repository import AccidentRepository
 
 
 class AccidentService:
@@ -6,20 +7,18 @@ class AccidentService:
     def __init__(self):
 
         self.db = DatabaseManager()
-
         self.db.connect()
 
-    def get_total_accidents(self): # This function is used to get the accidents records by creating the endpoint
-                                   # in app.py file.
+        self.repository = AccidentRepository(self.db)
 
-        query = """
-        SELECT COUNT(*)
-        FROM accidents
+    def get_total_accidents(self):
+
+        """
+        Return the total number of accidents.
         """
 
-        result = self.db.fetch_all(query)
-
-        return result[0][0]
+        return self.repository.get_total_accidents()
+    
 
     def get_severe_accidents(self):
 
