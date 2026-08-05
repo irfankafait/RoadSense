@@ -683,3 +683,7 @@ This becomes repetitive.
 So we convert these dictionaries to Pydantic Ojects. FastAPI internally performs serialization and convert it to JSON.
 
 
+## Architecture Thinking For Dashboards, AI Agents, Mobile Apps and Chatbots
+
+The problem is we have primary keys and foreign keys in database. If someone calls my API and receive IDs, like "location_id": 4, then frontend app immediately ask us what is 4?. It is necessary to manage data in keys in database, but AI agents or chatbots need human readable text to response. So to solve this problem, we can use JOINs from SQL. We need to join datatable with lookup table so that can fetch the information against any value.
+Never expose internal database design to end user.

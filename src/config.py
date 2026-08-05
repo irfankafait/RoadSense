@@ -116,6 +116,8 @@ files = [
     # PROJECT_ROOT / 'src/models/statistics.py'
     # PROJECT_ROOT / 'src/api/v1/statistics.py'
     # PROJECT_ROOT / 'src/repositories/accident_repository.py'
+    # PROJECT_ROOT / 'src/models/accident.py'
+
 ]
 
 for file in files:
