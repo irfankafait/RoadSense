@@ -668,3 +668,18 @@ Eventually this file becomes
 1800 lines
 
 because every feature adds more SQL. Repository solve this problem.
+
+
+
+## Returning Pydantic Models Instead of Dictionaries
+
+The browser sends a request to router. Then router receives it and send to service. Then service asks the repository. Then repository send it to database. Database returns raw values 1250, 230, (17, 96), ("Mall Road", 180). Then service manually creates a dictionary. Finally FastAPI converts that dictionary into JSON.
+Is That Wrong? No. Python dictionaries are perfectly valid. But let's imagine RoadSense becomes much larger. Statistics, Weather, Hotspots, AI Analysis, Predictions, Reports, Alerts, Recommendations. 
+Now every service builds dictionaries. Soon you'll have thousands of lines like      return {...}
+This becomes repetitive.
+
+## The Solution
+
+So we convert these dictionaries to Pydantic Ojects. FastAPI internally performs serialization and convert it to JSON.
+
+

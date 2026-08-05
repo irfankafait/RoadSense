@@ -20,4 +20,3 @@ class StatisticsData(BaseModel):
 class StatisticsResponse(BaseModel):
     success: bool
     data: StatisticsData
-                
