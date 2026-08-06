@@ -105,18 +105,45 @@ class AccidentRepository:
     def get_accidents(
             self,
             page=1,
-            page_size=20
+            page_size=20,
+            severity=None,
+            weather=None,
+            zone=None,
+            road_type=None
             ):
+
+
         """
         Return one page of accidents
         """
+        conditions = []
+        params = []
+
+        if severity:
+            conditions.append("s.severity_name = %s")
+            params.append(severity)
+
+        if weather:
+            conditions.append("w.weather_name = %s")
+            params.append(weather)
+
+        if zone:
+            conditions.append("z.zone_name = %s")
+            params.append(zone)
+
+        if road_type:
+            conditions.append("rt.road_type_name = %s")
+            params.append(road_type)   
+
+        where_clause = ""
+
+        if conditions:
+            where_clause = "WHERE " + " AND ".join(conditions) 
+
         offset = (page - 1) * page_size
+        params.extend([page_size, offset])      
 
-        """
-        Return all accidents with desriptive names.
-        """
-
-        query = """
+        query = f"""
         SELECT
             a.accident_id,
             a.accident_date,
@@ -125,7 +152,7 @@ class AccidentRepository:
             l.location_name,
             z.zone_name,
             rt.road_type_name,
-            s.severity_name
+            s.severity_name,
             w.weather_name,
 
             a.latitude,
@@ -148,6 +175,8 @@ class AccidentRepository:
         INNER JOIN weather w
             ON a.weather_id = w.weather_id
 
+        {where_clause}    
+
         ORDER BY a.accident_date DESC
 
         LIMIT %s 
@@ -156,8 +185,5 @@ class AccidentRepository:
 
         return self.db.fetch_all(
             query, 
-            (
-                page_size, 
-                offset
-                )
+                tuple(params)
         )
