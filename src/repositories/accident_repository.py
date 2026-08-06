@@ -100,3 +100,45 @@ class AccidentRepository:
         result = self.db.fetch_all(query)
     
         return result[0]
+    def get_accidents(self):
+
+        """
+        Return all accidents with desriptive names.
+        """
+
+        query = """
+        SELECT
+            a.accident_id,
+            a.accident_date,
+            a.hour_of_day,
+
+            l.location_name,
+            z.zone_name,
+            rt.road_type_name,
+            s.severity_name
+            w.weather_name,
+
+            a.latitude,
+            a.longitude
+
+        FROM accidents a
+
+        INNER JOIN locations l
+            ON a.location_id = l.location_id
+
+        INNER JOIN zones z
+            ON a.zone_id = z.zone_id
+
+        INNER JOIN road_types rt
+            ON a.road_type_id = rt.road_type_id
+
+        INNER JOIN severity s
+            ON a.severity_id = s.severity_id
+
+        INNER JOIN weather w
+            ON a.weather_id = w.weather_id
+
+        ORDER BY a.accident_date DESC                  
+        """
+
+        return self.db.fetch_all(query)
