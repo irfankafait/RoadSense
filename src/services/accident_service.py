@@ -6,6 +6,11 @@ from src.models.statistics import(
     TopHotspot,
 )
 
+from src.models.accident import (
+    Accident,
+    AccidentListResponse,
+)
+
 
 class AccidentService:
 
@@ -65,5 +70,52 @@ class AccidentService:
             )
         )
     )
+
+    def get_accidents(
+            self, 
+            page=1,
+            page_size=20,
+            severity=None,
+            weather=None,
+            zone=None,
+            road_type=None
+    ):
+
+
+        """
+        Returns a page of accidents.
+        """
+
+        rows = self.repository.get_accidents(
+            page=page,
+            page_size=page_size,
+            severity=severity,
+            weather=weather,
+            zone=zone,
+            road_type=road_type
+        )
+        accidents = []
+
+        for row in rows:
+            accidents.append(
+                Accident(
+
+                    accident_id=row[0],
+                    accident_date=row[1],
+                    hour_of_day=row[2],
+                    location=row[3],
+                    zone=row[4],
+                    road_type=row[5],
+                    severity=row[6],
+                    weather=row[7],
+                    latitude=row[8],
+                    longitude=row[9]
+            )
+        )
+                
+        return AccidentListResponse(
+            success=True,
+            data=accidents
+        )
 
     
