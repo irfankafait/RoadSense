@@ -100,7 +100,17 @@ class AccidentRepository:
         result = self.db.fetch_all(query)
     
         return result[0]
-    def get_accidents(self):
+
+
+    def get_accidents(
+            self,
+            page=1,
+            page_size=20
+            ):
+        """
+        Return one page of accidents
+        """
+        offset = (page - 1) * page_size
 
         """
         Return all accidents with desriptive names.
@@ -138,7 +148,16 @@ class AccidentRepository:
         INNER JOIN weather w
             ON a.weather_id = w.weather_id
 
-        ORDER BY a.accident_date DESC                  
+        ORDER BY a.accident_date DESC
+
+        LIMIT %s 
+        OFFSET %s                 
         """
 
-        return self.db.fetch_all(query)
+        return self.db.fetch_all(
+            query, 
+            (
+                page_size, 
+                offset
+                )
+        )
