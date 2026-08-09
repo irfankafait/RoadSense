@@ -92,9 +92,9 @@ class ETLoader:
 
         return {
 
-            name: record_id
+            row[name_column]: row[id_column]
 
-            for record_id, name in rows
+            for row in rows
         }
     def validate_columns(self, df):
 
