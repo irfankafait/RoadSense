@@ -38,3 +38,4 @@ class AccidentListResponse(BaseModel):
 
     success: bool
     data: list[Accident]
+    pagination: Pagination

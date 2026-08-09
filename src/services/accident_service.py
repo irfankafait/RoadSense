@@ -9,6 +9,7 @@ from src.models.statistics import(
 from src.models.accident import (
     Accident,
     AccidentListResponse,
+    Pagination,
 )
 
 
@@ -83,7 +84,8 @@ class AccidentService:
 
 
         """
-        Returns a page of accidents.
+        Returns a paginated list of accidents with
+        pagination metadata.
         """
 
         rows = self.repository.get_accidents(
@@ -92,16 +94,33 @@ class AccidentService:
             severity=severity,
             weather=weather,
             zone=zone,
-            road_type=road_type
+            road_type=road_type,
         )
+
+        total = self.repository.get_accidents_count(
+            severity=severity,
+            weather=weather,
+            zone=zone,
+            road_type=road_type,
+        )
+
+
         accidents = [
             Accident.model_validate(row)
             for row in rows
         ]
+
+        total_pages = (total + page_size - 1) // page_size
+
                 
         return AccidentListResponse(
             success=True,
-            data=accidents
+            data=accidents,
+            pagination=Pagination(
+                page=page,
+                page_size=page_size,
+                total=total,
+                total_pages=total_pages,
+            ),
         )
-
     

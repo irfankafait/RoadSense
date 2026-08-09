@@ -187,3 +187,69 @@ class AccidentRepository:
             query, 
                 tuple(params)
         )
+
+
+    def get_accidents_count(
+            self,
+            severity=None,
+            weather=None,
+            zone=None,
+            road_type=None
+    ):
+
+        """
+        Return the total number of accidents
+        matching the supplied filters.
+        """
+        conditions = []
+        params = []
+
+        if severity:
+            conditions.append("s.severity_name = %s")
+            params.append(severity)
+
+        if weather:
+            conditions.append("w.weather_name = %s")
+            params.append(weather)
+
+        if zone:
+            conditions.append("z.zone_name = %s")
+            params.append(zone)
+
+        if road_type:
+            conditions.append("rt.road_type_name = %s")
+            params.append(road_type)    
+
+        where_clause = ""
+
+        if conditions:
+            where_clause = "WHERE " + " AND ".join(conditions) 
+
+        query = f"""
+        SELECT COUNT(*) AS total_accidents
+        FROM accidents a
+
+        INNER JOIN locations l
+            ON a.location_id = l.location_id
+
+        INNER JOIN zones z
+            ON a.zone_id = z.zone_id
+
+        INNER JOIN road_types rt
+            ON a.road_type_id = rt.road_type_id
+
+        INNER JOIN severity s
+            ON a.severity_id = s.severity_id
+
+        INNER JOIN weather w
+            ON a.weather_id = w.weather_id
+
+        {where_clause}    
+        """
+
+        result = self.db.fetch_all(
+            query, 
+                tuple(params)
+        )
+
+        return result[0]['total_accidents']
