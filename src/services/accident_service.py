@@ -94,24 +94,10 @@ class AccidentService:
             zone=zone,
             road_type=road_type
         )
-        accidents = []
-
-        for row in rows:
-            accidents.append(
-                Accident(
-
-                    accident_id=row['accident_id'],
-                    accident_date=row['accident_date'],
-                    hour_of_day=row['hour_of_day'],
-                    location=row['location'],
-                    zone=row['zone'],
-                    road_type=row['road_type'],
-                    severity=row['severity'],
-                    weather=row['weather'],
-                    latitude=row['latitude'],
-                    longitude=row['longitude']
-            )
-        )
+        accidents = [
+            Accident.model_validate(row)
+            for row in rows
+        ]
                 
         return AccidentListResponse(
             success=True,
