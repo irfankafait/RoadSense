@@ -30,13 +30,13 @@ class AccidentRepository:
         """
 
         query = """
-        SELECT COUNT(*)
+        SELECT COUNT(*) AS total_accidents
         FROM accidents
         """
 
         result = self.db.fetch_all(query)
 
-        return result[0][0]
+        return result[0]['total_accidents']
 
     def get_severe_accidents(self):
 
@@ -45,7 +45,7 @@ class AccidentRepository:
         """
 
         query = """
-        SELECT COUNT(*)
+        SELECT COUNT(*) AS severe_accidents
         FROM accidents
         WHERE severity_id = (
             SELECT severity_id
@@ -59,7 +59,7 @@ class AccidentRepository:
             ('Critical',)
         )
 
-        return result[0][0]
+        return result[0]['severe_accidents']
 
 
     def get_peak_hour(self):
@@ -149,11 +149,11 @@ class AccidentRepository:
             a.accident_date,
             a.hour_of_day,
 
-            l.location_name,
-            z.zone_name,
-            rt.road_type_name,
-            s.severity_name,
-            w.weather_name,
+            l.location_name AS location,
+            z.zone_name AS zone,
+            rt.road_type_name AS road_type,
+            s.severity_name AS severity,
+            w.weather_name AS weather,
 
             a.latitude,
             a.longitude

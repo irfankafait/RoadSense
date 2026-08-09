@@ -50,7 +50,7 @@ class DatabaseManager:
                 **DATABASE_CONFIG
             )
 
-            self.cursor = self.connection.cursor()
+            self.cursor = self.connection.cursor(dictionary=True) # Now it returns dictionary. And every column will have a name.
 
             logger.info('Connected to MySQL successfully.')
             return self.connection

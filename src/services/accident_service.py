@@ -60,13 +60,13 @@ class AccidentService:
                 severe_accidents=severe_accidents,
 
                 peak_hour=PeakHour(
-                    hour=peak_hour[0],
-                    accidents=peak_hour[1]
+                    hour=peak_hour['hour_of_day'],
+                    accidents=peak_hour['accidents']
             ),
 
             top_hotspot=TopHotspot(
-                location=hotspot[0],
-                accidents=hotspot[1]
+                location=hotspot['location'],
+                accidents=hotspot['accidents']
             )
         )
     )
@@ -100,16 +100,16 @@ class AccidentService:
             accidents.append(
                 Accident(
 
-                    accident_id=row[0],
-                    accident_date=row[1],
-                    hour_of_day=row[2],
-                    location=row[3],
-                    zone=row[4],
-                    road_type=row[5],
-                    severity=row[6],
-                    weather=row[7],
-                    latitude=row[8],
-                    longitude=row[9]
+                    accident_id=row['accident_id'],
+                    accident_date=row['accident_date'],
+                    hour_of_day=row['hour_of_day'],
+                    location=row['location'],
+                    zone=row['zone'],
+                    road_type=row['road_type'],
+                    severity=row['severity'],
+                    weather=row['weather'],
+                    latitude=row['latitude'],
+                    longitude=row['longitude']
             )
         )
                 
