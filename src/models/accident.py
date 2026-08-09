@@ -20,6 +20,16 @@ class Accident(BaseModel):
     latitude: float
     longitude: float
 
+class Pagination(BaseModel):
+    """
+    Contain pagination information for an API response.
+    """
+
+    page: int
+    page_size: int
+    total: int
+    total_pages: int
+
 class AccidentListResponse(BaseModel):
 
     """
