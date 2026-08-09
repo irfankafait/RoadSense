@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 from src.services.accident_service import AccidentService
 from src.models.accident import AccidentListResponse
 
@@ -12,17 +12,30 @@ service = AccidentService()  # Create an instance of the AccidentService
 )
 
 def get_accidents(
-    page: int = 1,
-    page_size: int = 20,
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=20,
+        ge=1,
+        le=100,
+    ),
     severity: str | None = None,
     weather: str | None = None,
     zone: str | None = None,
     road_type: str | None = None,
 ):
 
-    return service.get_accidents(page=page, 
+    """
+    Return a paginated list of accidents.
+    """
+
+    return service.get_accidents(
+        page=page, 
         page_size=page_size,
         severity=severity,
         weather=weather,
         zone=zone,
-        road_type=road_type)
+        road_type=road_type,
+        )
