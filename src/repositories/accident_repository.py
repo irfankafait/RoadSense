@@ -101,20 +101,24 @@ class AccidentRepository:
     
         return result[0]
 
-
-    def get_accidents(
-            self,
-            page=1,
-            page_size=20,
-            severity=None,
-            weather=None,
-            zone=None,
-            road_type=None
-            ):
-
-
+    def _build_filter_clause(
+        self, 
+        severity=None, 
+        weather=None, 
+        zone=None, 
+        road_type=None
+    ):
         """
-        Return one page of accidents
+        Build the WHERE clause and parameters
+        used by accident queries.
+
+        Returns
+        -------
+        tuple
+            A tuple containing:
+
+            1. WHERE SQL fragment
+            2. SQL parameter tuple
         """
         conditions = []
         params = []
@@ -133,15 +137,39 @@ class AccidentRepository:
 
         if road_type:
             conditions.append("rt.road_type_name = %s")
-            params.append(road_type)   
+            params.append(road_type)    
 
-        where_clause = ""
+        if not conditions:
+            return "", ()    
+        where_clause = ("WHERE " + " AND ".join(conditions))  
 
-        if conditions:
-            where_clause = "WHERE " + " AND ".join(conditions) 
+        return where_clause, tuple(params)
 
-        offset = (page - 1) * page_size
-        params.extend([page_size, offset])      
+
+    def get_accidents(
+            self,
+            page=1,
+            page_size=20,
+            severity=None,
+            weather=None,
+            zone=None,
+            road_type=None
+            ):
+
+
+        """
+        Return one page of accidents
+        """
+        where_clause, filter_params = (
+            self._build_filter_clause(
+                severity=severity,
+                weather=weather,
+                zone=zone,
+                road_type=road_type
+            )
+        )  
+
+        offset = (page - 1) * page_size   
 
         query = f"""
         SELECT
@@ -183,9 +211,15 @@ class AccidentRepository:
         OFFSET %s                 
         """
 
+        params = (
+            *filter_params,
+            page_size,
+            offset
+        )
+
         return self.db.fetch_all(
             query, 
-                tuple(params)
+            params
         )
 
 
@@ -201,29 +235,16 @@ class AccidentRepository:
         Return the total number of accidents
         matching the supplied filters.
         """
-        conditions = []
-        params = []
 
-        if severity:
-            conditions.append("s.severity_name = %s")
-            params.append(severity)
+        where_clause, filter_params = (
+            self._build_filter_clause(
+                severity=severity,
+                weather=weather,
+                zone=zone,
+                road_type=road_type
+            )
+        )
 
-        if weather:
-            conditions.append("w.weather_name = %s")
-            params.append(weather)
-
-        if zone:
-            conditions.append("z.zone_name = %s")
-            params.append(zone)
-
-        if road_type:
-            conditions.append("rt.road_type_name = %s")
-            params.append(road_type)    
-
-        where_clause = ""
-
-        if conditions:
-            where_clause = "WHERE " + " AND ".join(conditions) 
 
         query = f"""
         SELECT COUNT(*) AS total_accidents
@@ -249,7 +270,7 @@ class AccidentRepository:
 
         result = self.db.fetch_all(
             query, 
-                tuple(params)
+            filter_params
         )
 
         return result[0]['total_accidents']
