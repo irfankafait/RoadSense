@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Query
+from datetime import date
+from fastapi import APIRouter, HTTPException, Query
 from src.services.accident_service import AccidentService
 from src.models.accident import AccidentListResponse
 
@@ -25,17 +26,23 @@ def get_accidents(
     weather: str | None = None,
     zone: str | None = None,
     road_type: str | None = None,
+    start_date: date | None = None,
+    end_date: date | None = None,
 ):
 
     """
     Return a paginated list of accidents.
     """
-
-    return service.get_accidents(
-        page=page, 
-        page_size=page_size,
-        severity=severity,
-        weather=weather,
-        zone=zone,
-        road_type=road_type,
-        )
+    try:    
+        return service.get_accidents(
+            page=page, 
+            page_size=page_size,
+            severity=severity,
+            weather=weather,
+            zone=zone,
+            road_type=road_type,
+            start_date=start_date,
+            end_date=end_date,
+            )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))

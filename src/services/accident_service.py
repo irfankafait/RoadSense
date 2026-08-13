@@ -79,7 +79,9 @@ class AccidentService:
             severity=None,
             weather=None,
             zone=None,
-            road_type=None
+            road_type=None,
+            start_date=None,
+            end_date=None
     ):
 
 
@@ -88,6 +90,13 @@ class AccidentService:
         pagination metadata.
         """
 
+        if (
+            start_date is not None
+            and end_date is not None
+            and start_date > end_date
+        ):
+            raise ValueError("Start date must be less than or equal to end date.")
+
         rows = self.repository.get_accidents(
             page=page,
             page_size=page_size,
@@ -95,6 +104,8 @@ class AccidentService:
             weather=weather,
             zone=zone,
             road_type=road_type,
+            start_date=start_date,
+            end_date=end_date,
         )
 
         total = self.repository.get_accidents_count(
@@ -102,6 +113,8 @@ class AccidentService:
             weather=weather,
             zone=zone,
             road_type=road_type,
+            start_date=start_date,
+            end_date=end_date,
         )
 
 

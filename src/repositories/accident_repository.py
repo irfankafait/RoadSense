@@ -106,7 +106,9 @@ class AccidentRepository:
         severity=None, 
         weather=None, 
         zone=None, 
-        road_type=None
+        road_type=None,
+        start_date=None,
+        end_date=None
     ):
         """
         Build the WHERE clause and parameters
@@ -137,7 +139,15 @@ class AccidentRepository:
 
         if road_type:
             conditions.append("rt.road_type_name = %s")
-            params.append(road_type)    
+            params.append(road_type)
+
+        if start_date:
+            conditions.append("a.accident_date >= %s")
+            params.append(start_date)
+
+        if end_date:
+            conditions.append("a.accident_date <= %s")
+            params.append(end_date)    
 
         if not conditions:
             return "", ()    
@@ -153,7 +163,9 @@ class AccidentRepository:
             severity=None,
             weather=None,
             zone=None,
-            road_type=None
+            road_type=None,
+            start_date=None,
+            end_date=None
             ):
 
 
@@ -165,7 +177,9 @@ class AccidentRepository:
                 severity=severity,
                 weather=weather,
                 zone=zone,
-                road_type=road_type
+                road_type=road_type,
+                start_date=start_date,
+                end_date=end_date
             )
         )  
 
@@ -228,7 +242,9 @@ class AccidentRepository:
             severity=None,
             weather=None,
             zone=None,
-            road_type=None
+            road_type=None,
+            start_date=None,
+            end_date=None
     ):
 
         """
@@ -241,7 +257,9 @@ class AccidentRepository:
                 severity=severity,
                 weather=weather,
                 zone=zone,
-                road_type=road_type
+                road_type=road_type,
+                start_date=start_date,
+                end_date=end_date
             )
         )
 
