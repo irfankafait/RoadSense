@@ -76,12 +76,15 @@ class AccidentService:
             self, 
             page=1,
             page_size=20,
+            location=None,
             severity=None,
             weather=None,
             zone=None,
             road_type=None,
             start_date=None,
-            end_date=None
+            end_date=None,
+            sort_by='accident_date',
+            sort_order='desc'
     ):
 
 
@@ -100,15 +103,19 @@ class AccidentService:
         rows = self.repository.get_accidents(
             page=page,
             page_size=page_size,
+            location=location,
             severity=severity,
             weather=weather,
             zone=zone,
             road_type=road_type,
             start_date=start_date,
             end_date=end_date,
+            sort_by=sort_by,
+            sort_order=sort_order,
         )
 
         total = self.repository.get_accidents_count(
+            location=location,
             severity=severity,
             weather=weather,
             zone=zone,

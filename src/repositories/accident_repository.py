@@ -9,6 +9,23 @@ class AccidentRepository:
     and storing accident data.
     """
 
+    SORT_COLUMNS = {
+        'accident_date': 'a.accident_date',
+        'hour_of_day': 'a.hour_of_day',
+        'location': 'l.location_name',
+        'zone': 'z.zone_name',
+        'road_type': 'rt.road_type_name',
+        'severity': 's.severity_name',
+        'weather': 'w.weather_name',
+        'latitude': 'a.latitude',
+        'longitude': 'a.longitude',
+    }
+
+    SORT_ORDERS = {
+        'asc': 'ASC',
+        'desc': 'DESC'
+    }
+
     def __init__(self, db=None):
 
         """
@@ -102,7 +119,8 @@ class AccidentRepository:
         return result[0]
 
     def _build_filter_clause(
-        self, 
+        self,
+        location=None,
         severity=None, 
         weather=None, 
         zone=None, 
@@ -124,6 +142,10 @@ class AccidentRepository:
         """
         conditions = []
         params = []
+
+        if location:
+            conditions.append("l.location_name = %s")
+            params.append(location)
 
         if severity:
             conditions.append("s.severity_name = %s")
@@ -155,17 +177,41 @@ class AccidentRepository:
 
         return where_clause, tuple(params)
 
+    def _build_order_clause(
+        self, 
+        sort_by, 
+        sort_order
+    ):
+
+        """
+        Build a safe ORDER BY clause using
+        whitelisted column names and sort directions."""
+
+        column = self.SORT_COLUMNS.get(sort_by)
+        direction = self.SORT_ORDERS.get(sort_order)
+
+        if column is None:
+            raise ValueError(f"Unsupported sort field: {sort_by}")
+
+        if direction is None:
+            raise ValueError(f"Unsupported sort direction: {sort_order}")
+
+        return f"ORDER BY {column} {direction}"
+    
 
     def get_accidents(
             self,
             page=1,
             page_size=20,
+            location=None,
             severity=None,
             weather=None,
             zone=None,
             road_type=None,
             start_date=None,
-            end_date=None
+            end_date=None,
+            sort_by='accident_date',
+            sort_order='desc'
             ):
 
 
@@ -174,6 +220,7 @@ class AccidentRepository:
         """
         where_clause, filter_params = (
             self._build_filter_clause(
+                location=location,
                 severity=severity,
                 weather=weather,
                 zone=zone,
@@ -182,6 +229,13 @@ class AccidentRepository:
                 end_date=end_date
             )
         )  
+
+
+        order_clause = self._build_order_clause(
+            sort_by=sort_by,
+            sort_order=sort_order
+        )
+
 
         offset = (page - 1) * page_size   
 
@@ -217,9 +271,10 @@ class AccidentRepository:
         INNER JOIN weather w
             ON a.weather_id = w.weather_id
 
-        {where_clause}    
+        {where_clause}
 
-        ORDER BY a.accident_date DESC
+        {order_clause} 
+
 
         LIMIT %s 
         OFFSET %s                 
@@ -239,6 +294,7 @@ class AccidentRepository:
 
     def get_accidents_count(
             self,
+            location=None,
             severity=None,
             weather=None,
             zone=None,
@@ -254,6 +310,7 @@ class AccidentRepository:
 
         where_clause, filter_params = (
             self._build_filter_clause(
+                location=location,
                 severity=severity,
                 weather=weather,
                 zone=zone,
