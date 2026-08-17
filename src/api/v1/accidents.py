@@ -2,6 +2,8 @@ from datetime import date
 from fastapi import APIRouter, HTTPException, Query
 from src.services.accident_service import AccidentService
 from src.models.accident import AccidentListResponse
+from src.models.enums import SortOrder
+
 
 router = APIRouter()   # Create the Router
 
@@ -32,8 +34,8 @@ def get_accidents(
     sort_by: str = Query(
         default='accident_date',
     ),
-    sort_order: str = Query(
-        default='desc',
+    sort_order: SortOrder = Query(
+        default=SortOrder.DESC,
     ),
 ):
 
@@ -52,7 +54,7 @@ def get_accidents(
             start_date=start_date,
             end_date=end_date,
             sort_by=sort_by,
-            sort_order=sort_order,
+            sort_order=sort_order.value,
             )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
