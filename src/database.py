@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 from .config import * 
 from .logger import logger
+from .exceptions import DatabaseError
 
 
 class DatabaseManager:
@@ -144,7 +145,7 @@ class DatabaseManager:
 
             logger.error(f'Query failed: {e}')
 
-            return []
+            raise DatabaseError("The database query could not be completed.") from e
 
     def insert_accidents(self, records):
 
