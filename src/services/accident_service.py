@@ -15,9 +15,9 @@ from src.models.accident import (
 
 class AccidentService:
 
-    def __init__(self):
+    def __init__(self, repository):
 
-        self.repository = AccidentRepository()
+        self.repository = repository
 
     def get_total_accidents(self):
 
