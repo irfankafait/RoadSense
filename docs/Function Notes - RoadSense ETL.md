@@ -687,3 +687,42 @@ So we convert these dictionaries to Pydantic Ojects. FastAPI internally performs
 
 The problem is we have primary keys and foreign keys in database. If someone calls my API and receive IDs, like "location_id": 4, then frontend app immediately ask us what is 4?. It is necessary to manage data in keys in database, but AI agents or chatbots need human readable text to response. So to solve this problem, we can use JOINs from SQL. We need to join datatable with lookup table so that can fetch the information against any value.
 Never expose internal database design to end user.
+
+
+## What should we validate with an Enum?
+
+Values that are application-defined and fixed are excellent candidates.
+For example:
+
+asc
+desc
+The database isn't defining those. They're part of our API behavior.
+
+## Why uppercase names?
+
+This ASC, DESC is the Python member name. This: "asc", "desc" is the actual value sent through the API.
+
+So: SortOrder.ASC.value is: "asc". while: SortOrder.ASC is the Enum member.
+
+This distinction is useful to understand.
+
+
+## Exception Translation
+
+This is a powerful software-engineering concept. We translate: technical exception into: application exception.
+
+For example:
+
+mysql.connector.Error
+        ↓
+DatabaseError
+
+Then later:
+
+DatabaseError
+        ↓
+HTTP 503
+
+Potentially.
+
+The outside world never needs to see: mysql.connector.errors.ProgrammingError. That's an internal implementation detail.

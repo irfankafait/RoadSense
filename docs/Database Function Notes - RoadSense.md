@@ -558,3 +558,35 @@ Insert Accident Records
 ↓
 
 Disconnect Database
+
+
+## Connection pooling
+
+A connection pool keeps a collection of reusable database connections.
+
+Instead of:
+
+request
+  ↓
+create connection
+  ↓
+query
+  ↓
+destroy connection
+
+we have:
+
+              Connection Pool
+            ┌─────┬─────┬─────┐
+            │ DB1 │ DB2 │ DB3 │
+            └─────┴─────┴─────┘
+                ↑    ↑    ↑
+                └────┬───┘
+                     │
+                  requests
+
+A request borrows an available connection.
+
+When finished, it returns the connection to the pool.
+
+It isn't destroyed.

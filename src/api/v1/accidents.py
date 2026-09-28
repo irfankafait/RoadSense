@@ -1,13 +1,16 @@
 from datetime import date
-from fastapi import APIRouter, HTTPException, Query
+
+from fastapi import APIRouter, Depends, HTTPException, Query
+
+from src.dependencies import get_accident_service
 from src.services.accident_service import AccidentService
 from src.models.accident import AccidentListResponse
 from src.models.enums import SortOrder
 
 
+
 router = APIRouter()   # Create the Router
 
-service = AccidentService()  # Create an instance of the AccidentService
 
 @router.get(
     "/accidents", 
@@ -15,6 +18,7 @@ service = AccidentService()  # Create an instance of the AccidentService
 )
 
 def get_accidents(
+    
     page: int = Query(
         default=1,
         ge=1,
@@ -24,6 +28,7 @@ def get_accidents(
         ge=1,
         le=100,
     ),
+
     location: str | None = None,
     severity: str | None = None,
     weather: str | None = None,
@@ -37,6 +42,9 @@ def get_accidents(
     sort_order: SortOrder = Query(
         default=SortOrder.DESC,
     ),
+    service: AccidentService = Depends(
+        get_accident_service
+        ),
 ):
 
     """
