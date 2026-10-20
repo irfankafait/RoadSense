@@ -1,4 +1,5 @@
 import mysql.connector
+from contextlib import contextmanager
 from mysql.connector import Error
 from mysql.connector.pooling import MySQLConnectionPool
 
@@ -91,6 +92,48 @@ class DatabaseManager:
             raise DatabaseError(
                 "A database connection could not be obtained."
             ) from e
+
+
+
+    @contextmanager
+    def transaction(self):
+        """
+        Provide a database connection for one transaction.
+        The transaction is committed if the operation succeeds.
+        The transaction is rolled back if an error accurs.
+        The connection is returned to the pool afterwards.
+        """    
+
+        connection = None
+
+        try:
+            connection = self.get_connection()
+
+            connection.start_transaction()
+
+            logger.info('Database transaction started.')
+
+            yield connection
+
+            connection.commit()
+
+            logger.info('Database transaction committed.')
+
+        except Exception as e:
+
+            if connection:
+                connection.rollback()
+
+            logger.error(f'Database transaction rolled back: {e}')
+
+            raise DatabaseError('The database transaction failed.') from e
+
+        finally:
+            if connection:
+                connection.close()
+            logger.info('Database transaction connection returned to pool.')      
+
+            
 
     def create_tables(self):
         """
@@ -319,6 +362,82 @@ class DatabaseManager:
 
             if connection:
                 connection.close()
+
+
+    def replace_accidents(self, records):
+        """
+        Atomically replace all accident records.
+
+        If deletion or insertion fails, roll back the transaction
+        so the previous records are preserved.
+        """
+
+        if not records:
+            raise ValueError("Cannot replace accident records with an empty dataset.")
+
+        delete_query = """
+        DELETE FROM accidents
+        """
+
+        insert_query = """
+        INSERT INTO accidents (
+            accident_date,
+            hour_of_day,
+            location_id,
+            zone_id,
+            weather_id,
+            severity_id,
+            road_type_id,
+            latitude,
+            longitude
+        )
+        VALUES (
+            %s,
+            %s,
+            %s,
+            %s,
+            %s,
+            %s,
+            %s,
+            %s,
+            %s
+        )
+        """
+
+        with self.transaction() as connection:
+            
+            cursor = None
+
+        try:
+
+
+            cursor = connection.cursor()
+
+            # Step 1: Delete existing records inside the transaction.
+            cursor.execute(delete_query)
+
+            logger.info(
+                'Existing accident records deleted inside transaction.'
+            )
+
+            # Step 2: Insert the new replacement dataset.
+            cursor.executemany(
+                    insert_query,
+                    records
+                )
+
+            logger.info(
+                    '%s replacement accident records inserted.',
+                    len(records),
+                )
+
+
+        finally:
+
+            if cursor:
+                cursor.close()
+
+
 
     def clear_accidents(self):
 

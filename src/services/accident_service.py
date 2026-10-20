@@ -15,9 +15,10 @@ from src.models.accident import (
 
 class AccidentService:
 
-    def __init__(self, repository):
+    def __init__(self, repository, db):
 
         self.repository = repository
+        self.db = db
 
     def get_total_accidents(self):
 
@@ -143,4 +144,22 @@ class AccidentService:
                 total_pages=total_pages,
             ),
         )
+
+    def replace_accidents(self, records):
+
+        """
+        Replace all accident dataset atomically.
+        """
+
+        if not records:
+            raise ValueError("Cannot replace accidents data with an empty dataset.")
+
+        with self.db.transaction() as connection:
+            self.repository.delete_all_accidents(connection)
+            self.repository.insert_accidents(connection, records)
+
+        return {
+            'success': True,
+            'inserted': len(records),
+        }
     

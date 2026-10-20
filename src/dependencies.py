@@ -6,37 +6,31 @@ from src.services.accident_service import AccidentService
 
 
 def get_database(request: Request) -> DatabaseManager:
-
     """
     Return the application-level DatabaseManager.
-
-    The DatabaseManager and its connection pool are created
-    when the FASTAPI application starts.
     """
-
     return request.app.state.db
 
 
-def get_accident_repository(db: DatabaseManager = Depends(get_database),
-                            ):
-
+def get_accident_repository(
+    db: DatabaseManager = Depends(get_database),
+):
     """
-    Create an AccidentRepository using the application's DatabaseManager.
+    Create a repository using the application database manager.
     """
+    return AccidentRepository(db=db)
 
-    return AccidentRepository(db=db) 
 
 def get_accident_service(
-        repository: AccidentRepository = Depends(
-            get_accident_repository
-        ),
+    db: DatabaseManager = Depends(get_database),
+    repository: AccidentRepository = Depends(
+        get_accident_repository
+    ),
 ):
-
     """
-    Create an AccidentService using the accident repository.
+    Create a service using the repository and database manager.
     """
-
     return AccidentService(
-        repository=repository
+        repository=repository,
+        db=db,
     )
-

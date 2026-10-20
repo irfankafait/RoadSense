@@ -349,3 +349,54 @@ class AccidentRepository:
         )
 
         return result[0]['total_accidents']
+
+
+    def delete_all_accidents(self, connection):
+        """
+        Delete accident records within the supplied transaction.
+        This method does not commit
+        """
+        cursor = None
+
+        try:
+            cursor = connection.cursor()
+            cursor.execute("DELETE FROM accidents")
+
+        finally:
+            if cursor:
+                cursor.close()
+
+    def insert_accidents(self, connection, records):
+        """
+        Insert accident records within the supplied transaction.
+        This method does not commit
+        """
+        if not records:
+            raise ValueError("Cannot replace accidents data with an empty dataset.")
+
+        query = """
+        INSERT INTO accidents (
+            accident_id,
+            accident_date,
+            hour_of_day,
+            location_id,
+            zone_id,
+            road_type_id,
+            severity_id,
+            weather_id,
+            latitude,
+            longitude
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        )
+        """
+
+        cursor = None
+
+        try:
+            cursor = connection.cursor()
+            cursor.executemany(query, records)
+
+        finally:
+            if cursor:
+                cursor.close()

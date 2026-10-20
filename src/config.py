@@ -121,6 +121,7 @@ files = [
     # PROJECT_ROOT / 'src/models/enums.py'
     # PROJECT_ROOT / 'src/exceptions.py'
     # PROJECT_ROOT / 'src/dependencies.py'
+    # PROJECT_ROOT / 'tests/test_database_transactions.py'
 
 ]
 

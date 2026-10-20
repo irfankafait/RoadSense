@@ -351,7 +351,7 @@ class ETLoader:
                 try:
                     self.load(records)
 
-                    logger.info(f'Inserted final barch of {len(records)} records.')
+                    logger.info(f'Inserted final batch of {len(records)} records.')
 
                 except Exception:
 
